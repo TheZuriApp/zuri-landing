@@ -7,9 +7,14 @@ import { ArrowUpRight, Star } from "lucide-react";
 type HeroSectionProps = {
   stats: Stat[];
   onWaitlist: () => void;
+  onSneakPeek: () => void;
 };
 
-export function HeroSection({ stats, onWaitlist }: HeroSectionProps) {
+export function HeroSection({
+  stats,
+  onWaitlist,
+  onSneakPeek,
+}: HeroSectionProps) {
   return (
     <header className="flex flex-col gap-12 pt-4">
       <div className="flex items-center justify-between">
@@ -109,7 +114,7 @@ export function HeroSection({ stats, onWaitlist }: HeroSectionProps) {
               </div>
             </div>
           </div>
-          <Button variant="secondary" className="w-full">
+          <Button variant="secondary" className="w-full" onClick={onSneakPeek}>
             See more sneak peeks
           </Button>
         </Card>

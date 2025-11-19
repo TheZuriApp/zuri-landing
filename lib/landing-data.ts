@@ -32,6 +32,14 @@ export type Stat = {
   value: string;
 };
 
+export type SneakPeek = {
+  title: string;
+  summary: string;
+  insight: string;
+  tags: string[];
+  status: string;
+};
+
 export const features: Feature[] = [
   {
     title: "AI Fit Checks",
@@ -144,4 +152,31 @@ export const stats: Stat[] = [
   { label: "Looks stress-tested", value: "42K+" },
   { label: "Closets digitized", value: "18K+" },
   { label: "Cities on waitlist", value: "27" },
+];
+
+export const sneakPeeks: SneakPeek[] = [
+  {
+    title: "Closet Shuffle Preview",
+    summary: "Three-piece combo auto-generated from your uploaded archive.",
+    insight:
+      "We preserved your signature monochrome base but swapped in metallic boots to break the silhouette. Keep the cropped blazer; it anchors the stack.",
+    tags: ["Closet Shuffle", "Metallics", "Evening"],
+    status: "Testing",
+  },
+  {
+    title: "Virtual Try-On Overlay",
+    summary: "See how the satin trench drapes before it ships to you.",
+    insight:
+      "Length hits mid-calf which keeps proportions balanced with chunky sneakers. Consider a thinner belt to avoid stacking volume at the waist.",
+    tags: ["Virtual Try-On", "Outerwear", "Proportion"],
+    status: "Beta Wave",
+  },
+  {
+    title: "Ask Zuri Session",
+    summary: "Prompt: “Need gallery opening fit with one bold color.”",
+    insight:
+      "We paired your charcoal pleats with the new cobalt knit to keep the palette focused. Add the silver cuff from favorites to tie the cool tones together.",
+    tags: ["Ask Zuri", "Color Pop", "Gallery Night"],
+    status: "Live",
+  },
 ];

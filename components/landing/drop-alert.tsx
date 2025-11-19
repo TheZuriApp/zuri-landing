@@ -10,8 +10,9 @@ export function DropAlert() {
 
   const handleSubmit = async (event: React.FormEvent<HTMLFormElement>) => {
     event.preventDefault();
+    const form = event.currentTarget;
     setIsSubmitting(true);
-    const formData = new FormData(event.currentTarget);
+    const formData = new FormData(form);
     formData.append(
       "access_key",
       process.env.NEXT_PUBLIC_WEB3FORMS_ACCESS_KEY || ""
@@ -32,11 +33,11 @@ export function DropAlert() {
     setResult(
       data.success
         ? "Success! Watch your inbox for the drop."
-        : "Something went wrong. Try again."
+        : `Something went wrong. Try again.}`
     );
     setIsSubmitting(false);
     if (data.success) {
-      event.currentTarget.reset();
+      form.reset();
     }
   };
 
