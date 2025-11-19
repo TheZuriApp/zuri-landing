@@ -1,3 +1,4 @@
+import Image from "next/image";
 import { Badge } from "@/components/ui/badge";
 import { Button } from "@/components/ui/button";
 import { Card } from "@/components/ui/card";
@@ -18,10 +19,24 @@ export function HeroSection({
   return (
     <header className="flex flex-col gap-12 pt-4">
       <div className="flex items-center justify-between">
-        <p className="text-sm font-semibold tracking-[0.4em] text-black/70">
-          ZURI
-        </p>
-        <Badge variant="outline" className="text-black/70">
+        <div className="flex items-center gap-3 rounded-full border border-black/5 bg-white/90 px-4 py-2 shadow-[0_10px_30px_rgba(12,6,24,0.07)] backdrop-blur">
+          <Image
+            src="/zuri-logo.jpeg"
+            alt="Zuri logo"
+            width={48}
+            height={48}
+            className="h-12 w-12 rounded-full object-cover"
+          />
+          <div>
+            <p className="text-xs font-semibold uppercase tracking-[0.4em] text-black/70">
+              Zuri
+            </p>
+          </div>
+        </div>
+        <Badge
+          variant="outline"
+          className="rounded-full border-black/10 bg-white/70 px-4 py-2 text-xs font-semibold uppercase tracking-[0.3em] text-black/70"
+        >
           Pre-launch
         </Badge>
       </div>
