@@ -1,11 +1,6 @@
 import { Badge } from "@/components/ui/badge";
 import { Button } from "@/components/ui/button";
-import {
-  Card,
-  CardDescription,
-  CardHeader,
-  CardTitle,
-} from "@/components/ui/card";
+import { Card } from "@/components/ui/card";
 import type { Stat } from "@/lib/landing-data";
 import { ArrowUpRight, Star } from "lucide-react";
 
@@ -82,8 +77,8 @@ export function HeroSection({ stats, onWaitlist }: HeroSectionProps) {
               Upload your mirror selfie
             </p>
             <p className="text-sm leading-relaxed text-black/60">
-              Zuri breaks down silhouette, palette, texture, layering, and social
-              context before you even lock the fit.
+              Zuri breaks down silhouette, palette, texture, layering, and
+              social context before you even lock the fit.
             </p>
           </div>
           <div className="rounded-3xl border border-black/5 bg-linear-to-br from-white to-[#F6F1FF] p-6">
@@ -122,4 +117,3 @@ export function HeroSection({ stats, onWaitlist }: HeroSectionProps) {
     </header>
   );
 }
-
