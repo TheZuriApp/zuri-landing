@@ -28,13 +28,14 @@ export default function TermsOfService() {
         <div className="prose prose-slate max-w-none text-black/80">
           <p className="mb-6">
             Welcome to the Zuri website (zuri.in), owned and operated by Zuri
-            Technologies Private Limited. These Terms of Service ("Terms")
-            govern your access to and use of our website, including all content,
-            functionality, and services offered thereon. By accessing or using
-            the website, you confirm that you are at least 18 years old and
-            agree to be bound by these Terms, forming a binding legal contract
-            between you and Zuri Technologies Private Limited. If you disagree
-            with any part of these terms, you must not use the website.
+            Technologies Private Limited. These Terms of Service
+            (&quot;Terms&quot;) govern your access to and use of our website,
+            including all content, functionality, and services offered thereon.
+            By accessing or using the website, you confirm that you are at least
+            18 years old and agree to be bound by these Terms, forming a binding
+            legal contract between you and Zuri Technologies Private Limited. If
+            you disagree with any part of these terms, you must not use the
+            website.
           </p>
 
           <p className="mb-8">
@@ -68,7 +69,8 @@ export default function TermsOfService() {
             <li>
               <strong>User Conduct:</strong> You agree not to use the website
               for any unlawful purpose, including posting malicious code,
-              infringing on others' rights, or disseminating harmful content.
+              infringing on others&apos; rights, or disseminating harmful
+              content.
             </li>
             <li>
               <strong>Governing Law & Jurisdiction:</strong> These Terms are

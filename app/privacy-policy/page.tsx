@@ -28,15 +28,16 @@ export default function PrivacyPolicy() {
         <div className="prose prose-slate max-w-none text-black/80">
           <p className="mb-6">
             This Privacy Policy describes how Zuri Technologies Private Limited
-            ("Zuri," "we," "us," or "our") handles information collected via the
-            Zuri Website (stylmezuri.com) and distinguishes it from the
-            sensitive data handled by the Zuri mobile application. The purpose
-            of this website policy is primarily to cover browsing and contact
-            inquiries, while directing users to the comprehensive in-app policy
-            for details on personal data, virtual try-ons (VTO), and biometric
-            information collected within the mobile application. We are
-            committed to complying with applicable Indian data protection laws,
-            including the Digital Personal Data Protection Act, 2023 (DPDP Act).
+            (&quot;Zuri,&quot; &quot;we,&quot; &quot;us,&quot; or
+            &quot;our&quot;) handles information collected via the Zuri Website
+            (stylmezuri.com) and distinguishes it from the sensitive data
+            handled by the Zuri mobile application. The purpose of this website
+            policy is primarily to cover browsing and contact inquiries, while
+            directing users to the comprehensive in-app policy for details on
+            personal data, virtual try-ons (VTO), and biometric information
+            collected within the mobile application. We are committed to
+            complying with applicable Indian data protection laws, including the
+            Digital Personal Data Protection Act, 2023 (DPDP Act).
           </p>
 
           <p className="mb-8">
