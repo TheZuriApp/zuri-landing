@@ -31,8 +31,22 @@ export default function Home() {
         <FeatureGrid features={features} />
         <WorkflowSection workflow={workflow} onWaitlist={openWaitlist} />
         <DropAlert />
-        <footer className="pb-6 text-center text-xs uppercase tracking-[0.3em] text-black/40">
-          Zuri © {new Date().getFullYear()} • Pre-launch studio drop
+        <footer className="flex flex-col items-center gap-4 pb-6 text-center text-xs uppercase tracking-[0.3em] text-black/40">
+          <div className="flex gap-6">
+            <a
+              href="/privacy-policy"
+              className="hover:text-black/60 transition-colors"
+            >
+              Privacy Policy
+            </a>
+            <a
+              href="/terms-of-service"
+              className="hover:text-black/60 transition-colors"
+            >
+              Terms of Service
+            </a>
+          </div>
+          <div>Zuri © {new Date().getFullYear()} • Pre-launch studio drop</div>
         </footer>
       </div>
       <WaitlistModal
