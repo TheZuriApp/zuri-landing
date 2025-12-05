@@ -5,32 +5,36 @@ import { ArrowLeft } from "lucide-react";
 
 export default function TermsOfService() {
   return (
-    <div className="relative min-h-screen overflow-hidden bg-linear-to-b from-[#FDFBFF] via-[#F7F2FF] to-[#FFF8F0] px-6 py-12 sm:px-8 lg:px-12">
-      <div className="pointer-events-none absolute inset-0 opacity-60">
-        <div className="absolute left-1/2 top-[-10%] h-[500px] w-[500px] -translate-x-1/2 rounded-full bg-[#F8B6FF] blur-3xl" />
-        <div className="absolute right-[-10%] top-[20%] h-[420px] w-[420px] rounded-full bg-[#FFC6A5] blur-[160px]" />
-        <div className="absolute left-[-10%] bottom-[-10%] h-[420px] w-[420px] rounded-full bg-[#B6E3FF] blur-[160px]" />
-      </div>
+    <div className="min-h-screen bg-white px-6 py-12 sm:px-8 lg:px-12">
+      <div className="mx-auto max-w-3xl">
+        {/* Header Section */}
+        <div className="mb-12 border-b border-slate-200 pb-8">
+          <Link
+            href="/"
+            className="mb-8 inline-flex items-center gap-2 text-sm font-medium text-slate-500 transition-colors hover:text-slate-900"
+          >
+            <ArrowLeft className="h-4 w-4" />
+            Back to Home
+          </Link>
 
-      <div className="relative mx-auto max-w-3xl">
-        <Link
-          href="/"
-          className="mb-8 inline-flex items-center gap-2 text-sm font-medium text-black/60 transition-colors hover:text-black"
-        >
-          <ArrowLeft className="h-4 w-4" />
-          Back to Home
-        </Link>
+          <h1 className="text-3xl font-bold tracking-tight text-slate-900 sm:text-4xl">
+            Zuri Terms of Service
+          </h1>
+          <p className="mt-4 text-sm text-slate-500">
+            Last Updated: December 2025
+          </p>
+        </div>
 
-        <h1 className="mb-8 text-3xl font-bold tracking-tight sm:text-4xl">
-          Zuri Terms of Service
-        </h1>
-
-        <div className="prose prose-slate max-w-none text-black/80">
-          <p className="mb-6">
-            Welcome to the Zuri website (zuri.in), owned and operated by Zuri
-            Technologies Private Limited. These Terms of Service
-            (&quot;Terms&quot;) govern your access to and use of our website,
+        {/* Content */}
+        <div className="prose prose-slate max-w-none text-slate-700">
+          <p className="lead text-lg text-slate-800">
+            Welcome to the Zuri website (zuri.in), owned and operated by{" "}
+            <strong>Zuri Technologies Private Limited</strong>. These Terms of
+            Service ("Terms") govern your access to and use of our website,
             including all content, functionality, and services offered thereon.
+          </p>
+
+          <p>
             By accessing or using the website, you confirm that you are at least
             18 years old and agree to be bound by these Terms, forming a binding
             legal contract between you and Zuri Technologies Private Limited. If
@@ -38,7 +42,7 @@ export default function TermsOfService() {
             website.
           </p>
 
-          <p className="mb-8">
+          <p>
             The website provides information, updates, and links related to the
             Zuri application, alongside curated fashion recommendations, some of
             which contain affiliate links. Zuri retains all rights, title, and
@@ -49,10 +53,10 @@ export default function TermsOfService() {
             below.
           </p>
 
-          <h2 className="mb-4 text-xl font-semibold text-black">
+          <h2 className="mt-12 text-xl font-bold text-slate-900">
             Key Conditions of Use:
           </h2>
-          <ul className="mb-8 list-disc space-y-2 pl-5">
+          <ul className="list-disc pl-5 space-y-2">
             <li>
               <strong>Affiliate Disclaimer:</strong> Some links on the website
               are affiliate links, meaning Zuri earns a commission on qualifying
@@ -69,8 +73,7 @@ export default function TermsOfService() {
             <li>
               <strong>User Conduct:</strong> You agree not to use the website
               for any unlawful purpose, including posting malicious code,
-              infringing on others&apos; rights, or disseminating harmful
-              content.
+              infringing on others' rights, or disseminating harmful content.
             </li>
             <li>
               <strong>Governing Law & Jurisdiction:</strong> These Terms are
