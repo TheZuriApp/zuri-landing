@@ -30,8 +30,9 @@ export default function TermsOfService() {
           <p className="lead text-lg text-slate-800">
             Welcome to the Zuri website (zuri.in), owned and operated by{" "}
             <strong>Zuri Technologies Private Limited</strong>. These Terms of
-            Service ("Terms") govern your access to and use of our website,
-            including all content, functionality, and services offered thereon.
+            Service (&quot;Terms&quot;) govern your access to and use of our
+            website, including all content, functionality, and services offered
+            thereon.
           </p>
 
           <p>
@@ -73,7 +74,8 @@ export default function TermsOfService() {
             <li>
               <strong>User Conduct:</strong> You agree not to use the website
               for any unlawful purpose, including posting malicious code,
-              infringing on others' rights, or disseminating harmful content.
+              infringing on others&apos; rights, or disseminating harmful
+              content.
             </li>
             <li>
               <strong>Governing Law & Jurisdiction:</strong> These Terms are

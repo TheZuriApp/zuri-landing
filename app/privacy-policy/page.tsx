@@ -29,8 +29,9 @@ export default function PrivacyPolicy() {
         <div className="prose prose-slate max-w-none text-slate-700">
           <p className="lead text-lg text-slate-800">
             This Privacy Policy describes how{" "}
-            <strong>Zuri Technologies Private Limited</strong> ("Zuri," "we,"
-            "us," or "our") handles information collected via the Zuri Website
+            <strong>Zuri Technologies Private Limited</strong>{" "}
+            (&quot;Zuri,&quot; &quot;we,&quot; &quot;us,&quot; or
+            &quot;our&quot;) handles information collected via the Zuri Website
             (stylmezuri.com) and distinguishes it from the sensitive data
             handled by the Zuri mobile application.
           </p>
