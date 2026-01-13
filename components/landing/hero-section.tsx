@@ -1,139 +1,228 @@
 import Image from "next/image";
-import { Badge } from "@/components/ui/badge";
 import { Button } from "@/components/ui/button";
-import { Card } from "@/components/ui/card";
 import type { Stat } from "@/lib/landing-data";
 import { ArrowUpRight, Star } from "lucide-react";
 
 type HeroSectionProps = {
-  stats: Stat[];
   onWaitlist: () => void;
-  onSneakPeek: () => void;
 };
 
-export function HeroSection({
-  stats,
-  onWaitlist,
-  onSneakPeek,
-}: HeroSectionProps) {
+export function HeroSection({ onWaitlist }: HeroSectionProps) {
   return (
-    <header className="flex flex-col gap-12 pt-4">
-      <div className="flex items-center justify-between">
-        <div className="flex items-center gap-3 rounded-full border border-black/5 bg-white/90 px-4 py-2 shadow-[0_10px_30px_rgba(12,6,24,0.07)] backdrop-blur">
-          <Image
-            src="/zuri-logo.jpeg"
-            alt="Zuri logo"
-            width={48}
-            height={48}
-            className="h-12 w-12 rounded-full object-cover"
-          />
-          <div>
-            <p className="text-xs font-semibold uppercase tracking-[0.4em] text-black/70">
-              Zuri
-            </p>
-          </div>
-        </div>
-        <Badge
-          variant="outline"
-          className="rounded-full border-black/10 bg-white/70 px-4 py-2 text-xs font-semibold uppercase tracking-[0.3em] text-black/70"
-        >
-          Pre-launch
-        </Badge>
+    <header className="relative min-h-screen flex flex-col gap-4 pt-2 overflow-hidden">
+      {/* Background gradient and pattern */}
+      <div className="absolute inset-0 bg-linear-to-b from-[#FFF5F7] via-[#FFF0F3] to-white -z-10" />
+      {/* /* Subtle dot pattern overlay */}
+      <div
+        className="absolute inset-0 -z-10 opacity-[0.75]"
+        style={{
+          backgroundImage:
+            "radial-gradient(circle, #E25C7E 1px, transparent 1px)",
+          backgroundSize: "40px 40px",
+        }}
+      >
+        <Image
+          src="/Vector 447.svg"
+          alt="Dot pattern"
+          fill
+        />
       </div>
-      <div className="grid gap-10 lg:grid-cols-[1.1fr_0.9fr] lg:items-center">
-        <div className="flex flex-col gap-8">
-          <Badge variant="accent" className="w-fit">
-            New drop • Coming soon
-          </Badge>
-          <div className="space-y-6">
-            <h1 className="text-4xl font-semibold tracking-tight text-[#0B090C] sm:text-5xl lg:text-6xl">
-              Your AI-stylist that texts back before the party starts.
-            </h1>
-            <p className="text-lg leading-relaxed text-black/60 sm:text-xl">
-              Zuri is the pre-launch mobile app for people who obsess over fit,
-              fabric, and feeling. We blend AI critiques with wardrobe
-              intelligence so every look feels intentional and documented.
-            </p>
-          </div>
-          <div className="flex flex-col gap-4 sm:flex-row">
+
+      {/* nav bar */}
+      <div className="fixed top-4 left-0 right-0 z-50 flex items-center justify-center px-4">
+        <div
+          className="
+            flex items-center gap-6
+            rounded-full
+            border border-black/5
+            bg-white/30
+            px-6 py-2
+            h-14
+            w-full
+            max-w-6xl
+            shadow-[0_10px_30px_rgba(12,6,24,0.07)]
+            backdrop-blur-md
+          "
+        >
+          <Image src="/Group 1778.png" alt="Zuri logo" width={40} height={40} />
+
+          <div className="flex-1" />
+          <nav className="flex items-center gap-5 text-sm">
+            <button className="text-sm font-outfit text-[#555555] tracking-wide">
+              CAREER
+            </button>
+            <button className="text-sm font-outfit text-[#555555] tracking-wide">
+              CONTACT US
+            </button>
+            <button className="text-sm font-outfit text-[#555555] tracking-wide">
+              ZURI MAGAZINE
+            </button>
+          </nav>
+
+          <div className="flex-1" />
+
+          <button
+            className="
+          rounded-full
+          bg-linear-to-r from-[#E25C7E33] to-[#F2D1DA]
+          px-4 py-1
+          text-sm font-outfit text-[#4E4D4D]
+          shadow-sm
+          hover:opacity-90
+          transition
+          "
+          >
+            Try for free
+          </button>
+        </div>
+      </div>
+      <section className="relative min-h-[700px] flex flex-col pt-20">
+        {/* Text content */}
+        <div className="relative z-10 max-w-3xl mx-auto text-center">
+          <h1 className="font-fields font-semibold text-5xl leading-none tracking-normal text-center text-[#2B2B2B]">
+            Your Personal Stylist
+          </h1>
+
+          <h1 className="mt-2 text-5xl font-semibold leading-tight text-[#D96A7B] sm:text-4xl lg:text-5xl">
+            Powered by AI
+          </h1>
+
+          <p className="mx-auto mt-4 max-w-md text-sm text-[#6B6B6B] sm:text-base font-geist">
+            Get fashion advice made simple, personal, and perfectly you.
+          </p>
+
+          <div className="mt-6 flex flex-col sm:flex-row justify-center gap-5">
             <Button
-              className="group w-full sm:w-auto"
-              variant="gradient"
+              className="bg-[#ffffff] hover:bg-[#f0f0f0] px-5 py-2 text-sm font-medium rounded-sm h-11"
               onClick={onWaitlist}
             >
-              Join the waitlist
-              <ArrowUpRight className="ml-2 h-4 w-4 transition-transform group-hover:-translate-y-0.5 group-hover:translate-x-0.5" />
-            </Button>
-            <Button variant="ghost" className="w-full sm:w-auto">
-              Watch the prototype
-              <Star className="ml-2 h-4 w-4" />
-            </Button>
-          </div>
-          <div className="grid gap-4 sm:grid-cols-3">
-            {stats.map((stat) => (
-              <div
-                key={stat.label}
-                className="rounded-3xl border border-black/5 bg-white/80 px-5 py-4 text-center shadow-[0_10px_40px_rgba(15,15,23,0.08)] backdrop-blur"
-              >
-                <p className="text-2xl font-semibold text-[#0B090C]">
-                  {stat.value}
-                </p>
-                <p className="text-xs uppercase tracking-[0.2em] text-black/40">
-                  {stat.label}
-                </p>
+              <div className="flex items-center gap-2">
+                <Image
+                  src="/playstore.svg"
+                  alt="Google Play"
+                  width={28}
+                  height={28}
+                ></Image>
+                <div className="flex flex-col">
+                  <span className="text-left text-xs text-[#333333]">
+                    Get it on
+                  </span>
+                  <div className="text-left text-xs font-semibold text-[#000000]">
+                    Google Play
+                  </div>
+                </div>
               </div>
-            ))}
+            </Button>
+            <Button
+              className="bg-[#ffffff] hover:bg-[#f0f0f0] px-5 py-2 text-sm font-medium rounded-sm h-11"
+              onClick={onWaitlist}
+            >
+              <div className="flex items-center gap-2">
+                <Image
+                  src="/ios.svg"
+                  alt="Google Play"
+                  width={28}
+                  height={28}
+                ></Image>
+                <div className="flex flex-col">
+                  <span className="text-left text-xs text-[#333333]">
+                    Download on
+                  </span>
+                  <div className="text-left text-xs font-semibold text-[#000000]">
+                    App Store
+                  </div>
+                </div>
+              </div>
+            </Button>
           </div>
         </div>
-        <Card className="space-y-6 rounded-[40px] border-0 bg-white/80 p-8">
-          <div className="flex items-center justify-between">
-            <Badge variant="outline" className="text-xs tracking-[0.4em]">
-              Preview
-            </Badge>
-            <p className="text-sm text-black/50">Early Access Build 07</p>
-          </div>
-          <div className="space-y-4">
-            <p className="text-2xl font-semibold text-[#0B090C]">
-              Upload your mirror selfie
-            </p>
-            <p className="text-sm leading-relaxed text-black/60">
-              Zuri breaks down silhouette, palette, texture, layering, and
-              social context before you even lock the fit.
-            </p>
-          </div>
-          <div className="rounded-3xl border border-black/5 bg-linear-to-br from-white to-[#F6F1FF] p-6">
-            <div className="flex flex-col gap-4">
-              <div className="flex items-start justify-between">
-                <div>
-                  <p className="text-sm font-semibold text-[#0B090C]">
-                    Fit Insight
-                  </p>
-                  <p className="text-sm text-black/50">AI critique</p>
-                </div>
-                <Badge className="bg-black text-white">Coming Soon</Badge>
-              </div>
-              <p className="text-lg leading-relaxed text-black/70">
-                Waist-up balance looks sharp. Consider swapping the sneakers for
-                a slimmer profile to keep the line clean.
-              </p>
-              <div className="flex flex-wrap gap-2 text-xs uppercase tracking-[0.2em] text-black/40">
-                <span className="rounded-full border border-black/10 px-3 py-1">
-                  Layering
-                </span>
-                <span className="rounded-full border border-black/10 px-3 py-1">
-                  Palette
-                </span>
-                <span className="rounded-full border border-black/10 px-3 py-1">
-                  Texture
-                </span>
+
+        <div className="relative w-full flex justify-center mt-8">
+          {/* Wrapper */}
+          <div className="relative w-[700px] h-[550px]">
+            {/* Center Phone */}
+            <div className="absolute left-1/2 top-0 -translate-x-1/2 z-30">
+              <div className="rounded-[40px] bg-[#EDEDED] p-3 shadow-2xl h-[500px] w-[250px]">
+                <Image
+                  src="/Mask group.png"
+                  alt="Phone mockup"
+                  width={245}
+                  height={495}
+                  className="rounded-[32px]"
+                />
               </div>
             </div>
+
+            {/* LEFT SIDE FLOATING CARDS */}
+
+            <Image
+              src="/Group 1707491969.png"
+              alt="card"
+              width={140}
+              height={140}
+              className="absolute -left-[100px] top-[40px] z-10"
+            />
+
+            <Image
+              src="/Group 1707491891.png"
+              alt="card"
+              width={150}
+              height={150}
+              className="absolute left-12 top-[60px] z-10"
+            />
+
+            <Image
+              src="/Group 1707491965.png"
+              alt="card"
+              width={130}
+              height={130}
+              className="absolute -left-[50px] top-[240px] z-10"
+            />
+
+            <Image
+              src="/Frame 1707492289.png"
+              alt="card"
+              width={160}
+              height={160}
+              className="absolute left-12 top-[340px] z-10"
+            />
+
+            {/* RIGHT SIDE FLOATING CARDS */}
+
+            <Image
+              src="/Frame 1707492175.png"
+              alt="card"
+              width={150}
+              height={150}
+              className="absolute right-12 top-[70px] z-20"
+            />
+
+            <Image
+              src="Group 1707491966.svg"
+              alt="card"
+              width={180}
+              height={180}
+              className="absolute -right-[120px] top-6 rotate-12 z-10"
+            />
+
+            <Image
+              src="/Group 1707491965.png"
+              alt="card"
+              width={130}
+              height={130}
+              className="absolute -right-[70px] top-[210px] rotate-12 z-20"
+            />
+
+            <Image
+              src="/Group 1707491950.png"
+              alt="card"
+              width={160}
+              height={160}
+              className="absolute right-12 top-[300px] z-10"
+            />
           </div>
-          <Button variant="secondary" className="w-full" onClick={onSneakPeek}>
-            See more sneak peeks
-          </Button>
-        </Card>
-      </div>
+        </div>
+      </section>
     </header>
   );
 }
