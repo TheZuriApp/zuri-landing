@@ -3,7 +3,7 @@
 import { useState } from "react";
 import { HeroSection } from "@/components/landing/hero-section";
 import QuickStyleSection from "@/components/landing/quick-style-section";
-
+import OutfitImages from "@/components/landing/outfit-gallery-section";
 export default function Home() {
   const [waitlistOpen, setWaitlistOpen] = useState(false);
 
@@ -17,6 +17,7 @@ export default function Home() {
         />
       </div>
       <QuickStyleSection/>
+      <OutfitImages/>
     </div>
   );
 }

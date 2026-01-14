@@ -1,67 +1,148 @@
 import Image from "next/image";
-import { Card } from "@/components/ui/card";
+import React, { useEffect, useRef } from "react";
 
-export function OutfitGallerySection() {
+export default function OutfitImages() {
+  const scrollRef = useRef<HTMLDivElement>(null);
+
+  useEffect(() => {
+    const scrollContainer = scrollRef.current;
+    if (!scrollContainer) return;
+
+    let scrollAmount = 0;
+    const scrollSpeed = 1;
+    const maxScroll = scrollContainer.scrollWidth - scrollContainer.clientWidth;
+
+    const autoScroll = () => {
+      scrollAmount += scrollSpeed;
+
+      if (scrollAmount >= maxScroll) {
+        scrollAmount = 0;
+      }
+
+      scrollContainer.scrollLeft = scrollAmount;
+    };
+
+    const intervalId = setInterval(autoScroll, 30);
+
+    return () => clearInterval(intervalId);
+  }, []);
+
+  const outfitImages = [
+    "https://images.unsplash.com/photo-1515372039744-b8f02a3ae446?w=300&h=400&fit=crop",
+    "https://images.unsplash.com/photo-1539008835657-9e8e9680c956?w=300&h=400&fit=crop",
+    "https://images.unsplash.com/photo-1509631179647-0177331693ae?w=300&h=400&fit=crop",
+    "https://images.unsplash.com/photo-1524504388940-b1c1722653e1?w=300&h=400&fit=crop",
+    "https://images.unsplash.com/photo-1469334031218-e382a71b716b?w=300&h=400&fit=crop",
+    "https://images.unsplash.com/photo-1502716119720-b23a93e5fe1b?w=300&h=400&fit=crop",
+    "https://images.unsplash.com/photo-1496747611176-843222e1e57c?w=300&h=400&fit=crop",
+  ];
+
+  // Random rotation angles for each image
+  const rotations = [-8, 5, -3, 7, -5, 4, -6, 8, -4, 6, -7, 3, -2, 5];
+
   return (
-    <section className="space-y-10">
-      <div className="text-center">
-        <h2 className="text-3xl font-semibold tracking-tight text-[#2B2B2B] sm:text-4xl">
-          We Make Fashion <span className="text-[#D96A7B]">Feel Easy</span>
-        </h2>
-        <p className="mt-3 text-sm text-[#6B6B6B] sm:text-base">
-          Get fashion advice made for your body, your skin tone, and your unique style.
-        </p>
-      </div>
+    <div className="min-h-screen bg-white">
+      {/* Hero Section */}
+      <div className="max-w-full mx-auto px-4 sm:px-6 lg:px-8 py-16">
+        <div className="flex flex-col bg-gray-50 rounded-3xl p-8 mb-16">
+          {/* have to adjust the positioning of this text later */}
+          <div className="mb-8 left-[50px] top-[50px]">
+            <h1 className="text-[52px] font-bold text-gray-900 mb-4">
+              We Make Fashion <span className="text-[#E25C7E]">Feel Easy</span>
+            </h1>
+            <p className="text-[20px] text-gray-600 max-w-2xl">
+              Get fashion advice made for your body, your skin tone, and your
+              unique style. Get fashion advice made for your body.
+            </p>
+          </div>
 
-      <div className="overflow-hidden rounded-3xl bg-white/70 p-6 shadow-[0_18px_60px_rgba(12,6,24,0.06)]">
-        <div className="flex gap-6 overflow-x-auto pb-2">
-          {Array.from({ length: 7 }).map((_, index) => (
+          <div className="mb-20 overflow-hidden">
             <div
-              key={index}
-              className="flex-shrink-0 rounded-3xl bg-[#FDF7F9] px-6 py-10 shadow-[0_14px_40px_rgba(15,15,23,0.06)]"
+              ref={scrollRef}
+              className="flex gap-6 overflow-x-auto scrollbar-hide"
+              style={{ scrollBehavior: "auto" }}
             >
-              <div className="relative h-64 w-32 sm:h-72 sm:w-36">
-                <Image
-                  src={`/outfits/outfit-${index + 1}.png`}
-                  alt="Outfit preview"
-                  fill
-                  className="object-contain"
+              {[...outfitImages, ...outfitImages].map((img, idx) => (
+                <div
+                  key={idx}
+                  className="shrink-0 w-48 h-80 rounded-2xl mr-10 overflow-hidden shadow-lg hover:shadow-2xl transition-all duration-300"
+                  style={{
+                    transform: `rotate(${
+                      rotations[idx % rotations.length]
+                    }deg)`,
+                    marginTop: idx % 2 === 0 ? "0" : "2rem",
+                  }}
+                >
+                  <img
+                    src={img}
+                    alt={`Outfit ${idx + 1}`}
+                    className="w-full h-full object-cover mr-20"
+                  />
+                </div>
+              ))}
+            </div>
+          </div>
+        </div>
+
+        {/* App Screenshots Section */}
+        <div className="grid md:grid-cols-2 gap-12 items-center flex-col mb-16">
+          {/* Left Screenshot Card */}
+          <div className="relative bg-gray-50 rounded-3xl overflow-hidden">
+            {/* Phone area */}
+            <div className="flex justify-center pt-10 ">
+              <div className="w-[320px] h-[620px] rounded-[40px] bg-gray-200 flex  pt-4 items-center justify-center shadow-[0_20px_40px_rgba(0,0,0,0.06)]">
+                <img
+                  src="/Mask group (1).png"
+                  alt="Phone Screenshot"
+                  className="max-h-full max-w-full object-contain"
                 />
               </div>
             </div>
-          ))}
+
+            {/* Text area (pulled up to overlap) */}
+            <div className="bg-gradient-to-b from-white to-pink-100 px-6 pt-8 pb-8 -mt-40 relative z-10">
+              <p className="text-center text-gray-700 text-[18px] leading-relaxed">
+                Get fashion advice made for your body, your skin tone, and your
+                style. Get fashion advice made for your body, your skin tone,
+                and your style.
+              </p>
+            </div>
+          </div>
+
+          {/* Right Screenshot */}
+          <div className="relative bg-gray-50 rounded-3xl overflow-hidden">
+            {/* Phone area */}
+            <div className="flex justify-center pt-10 ">
+              <div className="w-[320px] h-[620px] rounded-[40px] bg-gray-200 flex pt-4 items-center justify-center shadow-[0_20px_40px_rgba(0,0,0,0.06)]">
+                <img
+                  src="/Frame 1707492289 (1).png"
+                  alt="Phone Screenshot"
+                  className="max-h-full max-w-full object-contain"
+                />
+              </div>
+            </div>
+
+            {/* Text area (pulled up to overlap) */}
+            <div className="bg-gradient-to-b from-white to-pink-100 px-6 pt-8 pb-8 -mt-40 relative z-10">
+              <p className="text-center text-gray-700 text-[18px] leading-relaxed">
+                Get fashion advice made for your body, your skin tone, and your
+                style. Get fashion advice made for your body, your skin tone,
+                and your style.
+              </p>
+            </div>
+          </div>
         </div>
       </div>
 
-      <div className="grid gap-8 md:grid-cols-2">
-        <Card className="flex h-full flex-col items-center justify-between bg-white/80 p-8">
-          <div className="relative h-80 w-full max-w-xs">
-            <Image
-              src="/screens/closet.png"
-              alt="Zuri closet screen"
-              fill
-              className="object-contain"
-            />
-          </div>
-          <p className="mt-6 text-center text-sm text-[#6B6B6B] sm:text-base">
-            Get fashion advice made for your body, your skin tone, and your wardrobe.
-          </p>
-        </Card>
-        <Card className="flex h-full flex-col items-center justify-between bg-white/80 p-8">
-          <div className="relative h-80 w-full max-w-xs">
-            <Image
-              src="/screens/ask-zuri.png"
-              alt="Ask Zuri screen"
-              fill
-              className="object-contain"
-            />
-          </div>
-          <p className="mt-6 text-center text-sm text-[#6B6B6B] sm:text-base">
-            Ask Zuri anything style-related and get personalized answers in seconds.
-          </p>
-        </Card>
-      </div>
-    </section>
+      <style jsx>{`
+        .scrollbar-hide::-webkit-scrollbar {
+          display: none;
+        }
+        .scrollbar-hide {
+          -ms-overflow-style: none;
+          scrollbar-width: none;
+        }
+      `}</style>
+    </div>
   );
 }
-
