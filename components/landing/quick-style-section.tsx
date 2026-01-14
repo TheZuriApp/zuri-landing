@@ -138,7 +138,8 @@ export default function QuickStyleSection() {
       h-auto
       object-contain
       rounded-2xl
-    "            />
+    "
+            />
           </div>
 
           <div className="space-y-4 bg-linear-to-b from-pink-100 to-white rounded-b-3xl p-4">

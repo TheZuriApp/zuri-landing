@@ -76,7 +76,7 @@ export function HeroSection({ onWaitlist }: HeroSectionProps) {
           </button>
         </div>
       </div>
-      <section className="relative min-h-[700px] flex flex-col pt-20">
+      <section className="relative min-h-[700px] flex flex-col pt-32">
         {/* Text content */}
         <div className="relative z-10 max-w-3xl mx-auto text-center">
           <h1 className="font-fields font-semibold text-5xl leading-none tracking-normal text-center text-[#2B2B2B]">

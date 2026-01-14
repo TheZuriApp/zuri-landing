@@ -118,12 +118,52 @@
   }
   body {
     @apply bg-background text-foreground;
+    font-family: "Geist", system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI",
+      sans-serif;
+  }
+  h1,
+  h2,
+  h3,
+  h4,
+  h5,
+  h6 {
+    font-family: "Fields", system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI",
+      sans-serif;
+  }
+  p {
+    font-family: "Geist", system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI",
+      sans-serif;
+  }
+  .font-outfit {
+    font-family: "Outfit", system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI",
+      sans-serif;
+  }
+  .font-fields {
+    font-family: "Fields", system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI",
+      sans-serif;
   }
 }
 
 @font-face {
   font-family: "Fields";
-  src: url("/fonts/Fields-Semibold.woff2") format("woff2");
+  src: url("/fonts/Fields/fonts/fonnts.com-Fields-Semi-Bold.otf") format("opentype");
   font-weight: 600;
   font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "Geist";
+  src: url("/fonts/Geist/Geist-VariableFont_wght.ttf") format("truetype");
+  font-weight: 100 900;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "Outfit";
+  src: url("/fonts/Outfit/Outfit-VariableFont_wght.ttf") format("truetype");
+  font-weight: 100 900;
+  font-style: normal;
+  font-display: swap;
 }
