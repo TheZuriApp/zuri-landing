@@ -43,40 +43,40 @@ export default function OutfitImages() {
   return (
     <div className="min-h-screen bg-white">
       {/* Hero Section */}
-      <div className="max-w-full mx-auto px-4 sm:px-6 lg:px-8 py-16">
-        <div className="flex flex-col bg-gray-50 rounded-3xl p-8 mb-16">
+      <div className="max-w-full mx-auto px-4 sm:px-6 lg:px-8 py-8 sm:py-12 md:py-16">
+        <div className="flex flex-col bg-gray-50 rounded-2xl sm:rounded-3xl p-4 sm:p-6 md:p-8 mb-8 sm:mb-12 md:mb-16">
           {/* have to adjust the positioning of this text later */}
-          <div className="mb-8 left-[50px] top-[50px]">
-            <h1 className="text-[52px] font-bold text-gray-900 mb-4">
+          <div className="mb-6 sm:mb-8">
+            <h1 className="text-3xl sm:text-4xl md:text-5xl lg:text-[52px] font-bold text-gray-900 mb-3 sm:mb-4 px-2 sm:px-0">
               We Make Fashion <span className="text-[#E25C7E]">Feel Easy</span>
             </h1>
-            <p className="text-[20px] text-gray-600 max-w-2xl">
+            <p className="text-base sm:text-lg md:text-xl text-gray-600 max-w-2xl px-2 sm:px-0">
               Get fashion advice made for your body, your skin tone, and your
               unique style. Get fashion advice made for your body.
             </p>
           </div>
 
-          <div className="mb-20 overflow-hidden">
+          <div className="mb-12 sm:mb-16 md:mb-20 overflow-hidden">
             <div
               ref={scrollRef}
-              className="flex gap-6 overflow-x-auto scrollbar-hide"
+              className="flex gap-3 sm:gap-4 md:gap-6 overflow-x-auto scrollbar-hide pb-2"
               style={{ scrollBehavior: "auto" }}
             >
               {[...outfitImages, ...outfitImages].map((img, idx) => (
                 <div
                   key={idx}
-                  className="shrink-0 w-48 h-80 rounded-2xl mr-10 overflow-hidden shadow-lg hover:shadow-2xl transition-all duration-300"
+                  className="shrink-0 w-32 h-52 sm:w-40 sm:h-64 md:w-48 md:h-80 rounded-xl sm:rounded-2xl mr-4 sm:mr-6 md:mr-10 overflow-hidden shadow-lg hover:shadow-2xl transition-all duration-300"
                   style={{
                     transform: `rotate(${
                       rotations[idx % rotations.length]
                     }deg)`,
-                    marginTop: idx % 2 === 0 ? "0" : "2rem",
+                    marginTop: idx % 2 === 0 ? "0" : "1rem",
                   }}
                 >
                   <img
                     src={img}
                     alt={`Outfit ${idx + 1}`}
-                    className="w-full h-full object-cover mr-20"
+                    className="w-full h-full object-cover"
                   />
                 </div>
               ))}
@@ -85,12 +85,12 @@ export default function OutfitImages() {
         </div>
 
         {/* App Screenshots Section */}
-        <div className="grid md:grid-cols-2 gap-12 items-center flex-col mb-16">
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-6 sm:gap-8 md:gap-12 items-center mb-12 sm:mb-16">
           {/* Left Screenshot Card */}
-          <div className="relative bg-gray-50 rounded-3xl overflow-hidden">
+          <div className="relative bg-gray-50 rounded-2xl sm:rounded-3xl overflow-hidden">
             {/* Phone area */}
-            <div className="flex justify-center pt-10 ">
-              <div className="w-[320px] h-[620px] rounded-[40px] bg-gray-200 flex  pt-4 items-center justify-center shadow-[0_20px_40px_rgba(0,0,0,0.06)]">
+            <div className="flex justify-center pt-6 sm:pt-8 md:pt-10">
+              <div className="w-[200px] h-[390px] sm:w-[260px] sm:h-[500px] md:w-[300px] md:h-[580px] lg:w-[320px] lg:h-[620px] rounded-[30px] sm:rounded-[35px] md:rounded-[40px] bg-gray-200 flex pt-3 sm:pt-4 items-center justify-center shadow-[0_20px_40px_rgba(0,0,0,0.06)]">
                 <img
                   src="/Mask group (1).png"
                   alt="Phone Screenshot"
@@ -100,8 +100,8 @@ export default function OutfitImages() {
             </div>
 
             {/* Text area (pulled up to overlap) */}
-            <div className="bg-gradient-to-b from-white to-pink-100 px-6 pt-8 pb-8 -mt-40 relative z-10">
-              <p className="text-center text-gray-700 text-[18px] leading-relaxed">
+            <div className="bg-gradient-to-b from-white to-pink-100 px-4 sm:px-5 md:px-6 pt-6 sm:pt-7 md:pt-8 pb-6 sm:pb-7 md:pb-8 -mt-24 sm:-mt-32 md:-mt-40 relative z-10">
+              <p className="text-center text-gray-700 text-sm sm:text-base md:text-lg leading-relaxed">
                 Get fashion advice made for your body, your skin tone, and your
                 style. Get fashion advice made for your body, your skin tone,
                 and your style.
@@ -110,10 +110,10 @@ export default function OutfitImages() {
           </div>
 
           {/* Right Screenshot */}
-          <div className="relative bg-gray-50 rounded-3xl overflow-hidden">
+          <div className="relative bg-gray-50 rounded-2xl sm:rounded-3xl overflow-hidden">
             {/* Phone area */}
-            <div className="flex justify-center pt-10 ">
-              <div className="w-[320px] h-[620px] rounded-[40px] bg-gray-200 flex pt-4 items-center justify-center shadow-[0_20px_40px_rgba(0,0,0,0.06)]">
+            <div className="flex justify-center pt-6 sm:pt-8 md:pt-10">
+              <div className="w-[200px] h-[390px] sm:w-[260px] sm:h-[500px] md:w-[300px] md:h-[580px] lg:w-[320px] lg:h-[620px] rounded-[30px] sm:rounded-[35px] md:rounded-[40px] bg-gray-200 flex pt-3 sm:pt-4 items-center justify-center shadow-[0_20px_40px_rgba(0,0,0,0.06)]">
                 <img
                   src="/Frame 1707492289 (1).png"
                   alt="Phone Screenshot"
@@ -123,8 +123,8 @@ export default function OutfitImages() {
             </div>
 
             {/* Text area (pulled up to overlap) */}
-            <div className="bg-gradient-to-b from-white to-pink-100 px-6 pt-8 pb-8 -mt-40 relative z-10">
-              <p className="text-center text-gray-700 text-[18px] leading-relaxed">
+            <div className="bg-gradient-to-b from-white to-pink-100 px-4 sm:px-5 md:px-6 pt-6 sm:pt-7 md:pt-8 pb-6 sm:pb-7 md:pb-8 -mt-24 sm:-mt-32 md:-mt-40 relative z-10">
+              <p className="text-center text-gray-700 text-sm sm:text-base md:text-lg leading-relaxed">
                 Get fashion advice made for your body, your skin tone, and your
                 style. Get fashion advice made for your body, your skin tone,
                 and your style.

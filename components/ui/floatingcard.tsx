@@ -11,8 +11,8 @@ export default function FloatingCard({
 }: Props) {
   return (
     <div
-      className={`absolute bg-white shadow-lg rounded-xl px-4 py-3 text-sm text-gray-600
-      ${small ? "max-w-[200px]" : ""}
+      className={`absolute bg-white shadow-lg rounded-lg sm:rounded-xl px-3 sm:px-4 py-2 sm:py-3 text-xs sm:text-sm text-gray-600
+      ${small ? "max-w-[150px] sm:max-w-[200px]" : "max-w-[200px] sm:max-w-[250px]"}
       ${className}`}
     >
       {text}

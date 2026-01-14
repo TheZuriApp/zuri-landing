@@ -18,25 +18,19 @@ export default function QuickStyleSection() {
   ];
 
   return (
-    <div className="min-h-screen bg-white p-8 rounded-t-4xl shadow-2xl">
+    <div className="min-h-screen bg-white p-4 sm:p-6 md:p-8 rounded-t-4xl shadow-2xl">
       {/* Top Section */}
-      <div className="max-w-7xl mx-auto grid md:grid-cols-[6fr_4fr] gap-8 mb-8">
+      <div className="max-w-7xl mx-auto grid grid-cols-1 md:grid-cols-[6fr_4fr] gap-4 sm:gap-6 md:gap-8 mb-6 sm:mb-8">
         {/* Left Card */}
-        <div className="bg-white rounded-3xl shadow-sm border-[#E0D4D7] border-[0.6px]">
-          <div
-            className="flex justify-center mb-6"
-            // style={{
-            //   backgroundImage: `url('data:image/svg+xml,<svg width="1000" height="400" xmlns="http://www.w3.org/2000/svg"><defs><pattern id="wave" x="0" y="0" width="100" height="100" patternUnits="userSpaceOnUse"><path d="M0,50 Q25,25 50,50 T100,50" stroke="%23e5e7eb" fill="none" stroke-width="0.5"/></pattern></defs><rect width="1000" height="400" fill="url(%23wave)"/></svg>')`,
-            //   backgroundSize: "cover",
-            // }}
-          >
-            <div className="flex flex-row gap-4 p-8">
+        <div className="bg-white rounded-2xl sm:rounded-3xl shadow-sm border-[#E0D4D7] border-[0.6px] overflow-hidden flex flex-col">
+          <div className="flex justify-center items-end mb-4 sm:mb-6 flex-1 min-h-[200px] sm:min-h-[250px] md:min-h-[280px] px-4 sm:px-6 md:px-8 pt-4 sm:pt-6 md:pt-8">
+            <div className="flex flex-row items-end justify-center gap-2 sm:gap-3 md:gap-4 w-full">
               <Image
                 src="/Group 1707491973.png"
                 alt="PNG1"
                 width={399.5}
                 height={258.08}
-                className="w-[399.5px] h-[258.08px] object-contain"
+                className="w-full max-w-[150px] sm:max-w-[180px] md:max-w-[200px] lg:max-w-[250px] xl:max-w-[399.5px] h-auto object-contain"
               />
 
               <Image
@@ -44,16 +38,16 @@ export default function QuickStyleSection() {
                 alt="PNG2"
                 width={399.5}
                 height={258.08}
-                className="w-[399.5px] h-[258.08px] object-contain"
+                className="w-full max-w-[150px] sm:max-w-[180px] md:max-w-[200px] lg:max-w-[250px] xl:max-w-[399.5px] h-auto object-contain"
               />
             </div>
           </div>
 
-          <div className="space-y-4 bg-linear-to-b from-pink-100 to-white rounded-b-3xl p-4">
-            <h2 className="text-[24px] font-semibold text-gray-800">
+          <div className="space-y-3 sm:space-y-4 bg-gradient-to-b from-pink-100 to-white rounded-b-2xl sm:rounded-b-3xl p-4 sm:p-5 md:p-6">
+            <h2 className="text-lg sm:text-xl md:text-2xl font-semibold text-gray-800">
               Quick Style
             </h2>
-            <p className="text-gray-600 font-geist text-[20px] leading-relaxed">
+            <p className="text-gray-600 font-geist text-sm sm:text-base md:text-lg lg:text-xl leading-relaxed">
               No more 'nothing to wear' meltdowns! Whether you're shuffling your
               closet or finding that one specific look for you, Zuri has sorted
               your looks to make sure you stay a 10/10. Walk into every room
@@ -64,21 +58,15 @@ export default function QuickStyleSection() {
         </div>
 
         {/* Right Card */}
-        <div className="bg-white rounded-3xl shadow-sm border-[#E0D4D7] border-[0.6px]">
-          <div
-            className="flex justify-center mb-6"
-            // style={{
-            //   backgroundImage: `url('data:image/svg+xml,<svg width="1000" height="400" xmlns="http://www.w3.org/2000/svg"><defs><pattern id="wave" x="0" y="0" width="100" height="100" patternUnits="userSpaceOnUse"><path d="M0,50 Q25,25 50,50 T100,50" stroke="%23e5e7eb" fill="none" stroke-width="0.5"/></pattern></defs><rect width="1000" height="400" fill="url(%23wave)"/></svg>')`,
-            //   backgroundSize: "cover",
-            // }}
-          >
-            <div className="flex flex-row gap-4 px-4 py-16">
+        <div className="bg-white rounded-2xl sm:rounded-3xl shadow-sm border-[#E0D4D7] border-[0.6px] overflow-hidden flex flex-col">
+          <div className="flex justify-center items-end mb-4 sm:mb-6 flex-1 min-h-[200px] sm:min-h-[250px] md:min-h-[280px] px-4 sm:px-6 md:px-8 pt-4 sm:pt-6 md:pt-8">
+            <div className="flex flex-row items-end justify-center gap-2 sm:gap-3 md:gap-4 w-full">
               <Image
                 src="/Frame 1707492214.png"
                 alt="PNG1"
                 width={299.5}
                 height={158.08}
-                className="w-[270px] h-[130px] object-contain"
+                className="w-full max-w-[120px] sm:max-w-[150px] md:max-w-[180px] lg:max-w-[220px] xl:max-w-[270px] h-auto object-contain"
               />
 
               <Image
@@ -86,16 +74,16 @@ export default function QuickStyleSection() {
                 alt="PNG2"
                 width={299.5}
                 height={158.08}
-                className="w-[270px] h-[130px] object-contain"
+                className="w-full max-w-[120px] sm:max-w-[150px] md:max-w-[180px] lg:max-w-[220px] xl:max-w-[270px] h-auto object-contain"
               />
             </div>
           </div>
 
-          <div className="space-y-4 bg-linear-to-b from-pink-100 to-white rounded-b-3xl p-4">
-            <h2 className="text-[24px] font-semibold text-gray-800">
+          <div className="space-y-3 sm:space-y-4 bg-gradient-to-b from-pink-100 to-white rounded-b-2xl sm:rounded-b-3xl p-4 sm:p-5 md:p-6">
+            <h2 className="text-lg sm:text-xl md:text-2xl font-semibold text-gray-800">
               Quick Style
             </h2>
-            <p className="text-gray-600 text-[20px] leading-relaxed">
+            <p className="text-gray-600 text-sm sm:text-base md:text-lg lg:text-xl leading-relaxed">
               No more 'nothing to wear' meltdowns! Whether you're shuffling your
               closet or finding that one specific look for you, Zuri has sorted
               your looks to make sure you stay a 10/10. Walk into every room
@@ -107,35 +95,23 @@ export default function QuickStyleSection() {
       </div>
 
       {/* Bottom Section */}
-      <div className="max-w-7xl mx-auto grid md:grid-cols-[4fr_6fr] gap-8">
+      <div className="max-w-7xl mx-auto grid grid-cols-1 md:grid-cols-[4fr_6fr] gap-4 sm:gap-6 md:gap-8">
         {/* Left Card */}
-        <div className="bg-white rounded-3xl shadow-sm border-[#E0D4D7] border-[0.6px]">
+        <div className="bg-white rounded-2xl sm:rounded-3xl shadow-sm border-[#E0D4D7] border-[0.6px] overflow-hidden flex flex-col">
           {/* Top Image Section */}
-          <div
-            className="relative flex items-center justify-center h-[420px] rounded-t-3xl"
-            // style={{
-            //   backgroundImage: `url("/f5526bc83722092216251403d8280b53f46c3cc7.png")`,
-            //   backgroundRepeat: "repeat",
-            //   backgroundSize: "auto",
-            // }}
-          >
+          <div className="relative flex items-center justify-center h-[250px] sm:h-[300px] md:h-[350px] lg:h-[420px] rounded-t-2xl sm:rounded-t-3xl bg-gray-50">
             <img
               src="/Group 1707491916.png"
               alt="Featured outfit"
-              className="
-      w-[420px]
-      h-auto
-      object-contain
-      rounded-2xl
-    "
+              className="w-full max-w-[280px] sm:max-w-[320px] md:max-w-[360px] lg:max-w-[420px] h-auto object-contain rounded-xl sm:rounded-2xl px-4"
             />
           </div>
 
-          <div className="space-y-4 bg-linear-to-b from-pink-100 to-white rounded-b-3xl p-4">
-            <h2 className="text-[20px] font-geist font-semibold text-gray-800">
+          <div className="space-y-3 sm:space-y-4 bg-gradient-to-b from-pink-100 to-white rounded-b-2xl sm:rounded-b-3xl p-4 sm:p-5 md:p-6 flex-1 flex flex-col justify-center">
+            <h2 className="text-base sm:text-lg md:text-xl font-geist font-semibold text-gray-800">
               Quick Style
             </h2>
-            <p className="text-gray-600 text-[20px] leading-relaxed">
+            <p className="text-gray-600 text-sm sm:text-base md:text-lg lg:text-xl leading-relaxed">
               No more 'nothing to wear' meltdowns! Whether you're shuffling your
               closet or finding that one specific look for you, Zuri has sorted
               your looks to make sure you stay a 10/10. Walk into every room
@@ -146,31 +122,20 @@ export default function QuickStyleSection() {
         </div>
 
         {/* Right Card */}
-        <div className="bg-white rounded-3xl shadow-sm border-[#E0D4D7] border-[0.6px]">
-          <div
-            className="relative flex items-center justify-center h-[420px] rounded-t-3xl"
-            // style={{
-            //   backgroundImage: `url('data:image/svg+xml,<svg width="1000" height="400" xmlns="http://www.w3.org/2000/svg"><defs><pattern id="wave" x="0" y="0" width="100" height="100" patternUnits="userSpaceOnUse"><path d="M0,50 Q25,25 50,50 T100,50" stroke="%23e5e7eb" fill="none" stroke-width="0.5"/></pattern></defs><rect width="1000" height="400" fill="url(%23wave)"/></svg>')`,
-            //   backgroundSize: "cover",
-            // }}
-          >
+        <div className="bg-white rounded-2xl sm:rounded-3xl shadow-sm border-[#E0D4D7] border-[0.6px] overflow-hidden flex flex-col">
+          <div className="relative flex items-center justify-center h-[250px] sm:h-[300px] md:h-[350px] lg:h-[420px] rounded-t-2xl sm:rounded-t-3xl bg-gray-50">
             <img
-              src="\Group 1707491947.png"
+              src="/Group 1707491947.png"
               alt="Featured outfit"
-              className="
-      w-[460px]
-      h-auto
-      object-contain
-      rounded-2xl
-    "
+              className="w-full max-w-[300px] sm:max-w-[340px] md:max-w-[380px] lg:max-w-[460px] h-auto object-contain rounded-xl sm:rounded-2xl px-4"
             />
           </div>
 
-          <div className="space-y-4 bg-linear-to-b from-pink-100 to-white rounded-b-3xl p-4">
-            <h2 className="text-[24px] font-semibold text-gray-800">
+          <div className="space-y-3 sm:space-y-4 bg-gradient-to-b from-pink-100 to-white rounded-b-2xl sm:rounded-b-3xl p-4 sm:p-5 md:p-6 flex-1 flex flex-col justify-center">
+            <h2 className="text-lg sm:text-xl md:text-2xl font-semibold text-gray-800">
               Quick Style
             </h2>
-            <p className="text-gray-600 text-[20px] leading-relaxed">
+            <p className="text-gray-600 text-sm sm:text-base md:text-lg lg:text-xl leading-relaxed">
               No more 'nothing to wear' meltdowns! Whether you're shuffling your
               closet or finding that one specific look for you, Zuri has sorted
               your looks to make sure you stay a 10/10. Walk into every room

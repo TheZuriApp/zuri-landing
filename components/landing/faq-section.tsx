@@ -40,50 +40,50 @@ export default function FAQAccordion() {
   };
 
   return (
-    <div className="min-h-screen bg-white py-4 px-4">
+    <div className="min-h-screen bg-white py-6 sm:py-8 md:py-12 px-4 sm:px-6 md:px-8">
       <div className="max-w-4xl mx-auto">
         {/* Header */}
-        <div className="text-center mb-12">
-          <h1 className="text-[54px] font-bold text-gray-800 mb-4">
+        <div className="text-center mb-8 sm:mb-10 md:mb-12">
+          <h1 className="text-3xl sm:text-4xl md:text-5xl lg:text-[54px] font-bold text-gray-800 mb-3 sm:mb-4">
             Frequently Asked <span className="text-[#E25C7E]">Questions</span>
           </h1>
-          <p className="text-gray-600 text-[20px]">
+          <p className="text-gray-600 text-base sm:text-lg md:text-xl px-2">
             Get fashion advice made for your body, your skin tone, and your
           </p>
         </div>
 
         {/* FAQ Accordion */}
-        <div className="space-y-4">
+        <div className="space-y-3 sm:space-y-4">
           {faqs.map((faq, index) => (
             <div
               key={index}
-              className="bg-white rounded-lg overflow-hidden transition-all duration-300"
+              className="bg-white rounded-lg overflow-hidden transition-all duration-300 "
             >
               {/* Question Header */}
                 <button
                 onClick={() => toggleAccordion(index)}
-                className="w-full px-6 py-5 flex items-center justify-between text-left hover:bg-gray-50"
+                className="w-full px-4 sm:px-5 md:px-6 py-4 sm:py-5 flex items-center justify-between text-left hover:bg-gray-50 transition-colors"
                 >
-                <span className="text-[24px] font-medium font-fields text-[#000000] pr-8 font-">
+                <span className="text-base sm:text-lg md:text-xl lg:text-2xl font-medium font-fields text-[#000000] pr-4 sm:pr-6 md:pr-8 flex-1">
                   {faq.question}
                 </span>
                 <div
-                  className={`shrink-0 w-8 h-8 rounded-full bg-pink-100 flex items-center justify-center transition-transform duration-300 ${
+                  className={`shrink-0 w-7 h-7 sm:w-8 sm:h-8 rounded-full bg-pink-100 flex items-center justify-center transition-transform duration-300 ${
                   openIndex === index ? 'rotate-45' : ''
                   }`}
                 >
-                  <PlusCircle className="w-5 h-5 text-[#E25C7E]" />
+                  <PlusCircle className="w-4 h-4 sm:w-5 sm:h-5 text-[#E25C7E]" />
                 </div>
                 </button>
-                <div className="border-b border-[#E6CED4] my-2" /> {/* Thin pink line */}
+                <div className="border-b border-[#E6CED4] my-1 sm:my-2" /> {/* Thin pink line */}
                 {/* Answer Content */}
                 <div
                 className={`overflow-hidden transition-all duration-300 ease-in-out ${
                   openIndex === index ? 'max-h-96 opacity-100' : 'max-h-0 opacity-0'
                 }`}
                 >
-                <div className="px-6 pb-5 pt-2">
-                  <p className="text-gray-600 leading-relaxed font-fields">
+                <div className="px-4 sm:px-5 md:px-6 pb-4 sm:pb-5 pt-2">
+                  <p className="text-gray-600 leading-relaxed font-fields text-sm sm:text-base">
                     {faq.answer}
                   </p>
                 </div>
