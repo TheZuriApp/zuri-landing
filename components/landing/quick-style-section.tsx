@@ -25,23 +25,35 @@ export default function QuickStyleSection() {
         <div className="bg-white rounded-3xl shadow-sm border-[#E0D4D7] border-[0.6px]">
           <div
             className="flex justify-center mb-6"
-            style={{
-              backgroundImage: `url('data:image/svg+xml,<svg width="1000" height="400" xmlns="http://www.w3.org/2000/svg"><defs><pattern id="wave" x="0" y="0" width="100" height="100" patternUnits="userSpaceOnUse"><path d="M0,50 Q25,25 50,50 T100,50" stroke="%23e5e7eb" fill="none" stroke-width="0.5"/></pattern></defs><rect width="1000" height="400" fill="url(%23wave)"/></svg>')`,
-              backgroundSize: "cover",
-            }}
+            // style={{
+            //   backgroundImage: `url('data:image/svg+xml,<svg width="1000" height="400" xmlns="http://www.w3.org/2000/svg"><defs><pattern id="wave" x="0" y="0" width="100" height="100" patternUnits="userSpaceOnUse"><path d="M0,50 Q25,25 50,50 T100,50" stroke="%23e5e7eb" fill="none" stroke-width="0.5"/></pattern></defs><rect width="1000" height="400" fill="url(%23wave)"/></svg>')`,
+            //   backgroundSize: "cover",
+            // }}
           >
-            <img
-              src="https://images.unsplash.com/photo-1583496661160-fb5886a0aaaa?w=400"
-              alt="Featured outfit"
-              className="w-48 h-64 object-cover rounded-2xl"
-            />
+            <div className="flex flex-row gap-4 p-8">
+              <Image
+                src="/Group 1707491973.png"
+                alt="PNG1"
+                width={399.5}
+                height={258.08}
+                className="w-[399.5px] h-[258.08px] object-contain"
+              />
+
+              <Image
+                src="/Frame 1707492130.png"
+                alt="PNG2"
+                width={399.5}
+                height={258.08}
+                className="w-[399.5px] h-[258.08px] object-contain"
+              />
+            </div>
           </div>
 
           <div className="space-y-4 bg-linear-to-b from-pink-100 to-white rounded-b-3xl p-4">
             <h2 className="text-[24px] font-semibold text-gray-800">
               Quick Style
             </h2>
-            <p className="text-gray-600 text-[20px] leading-relaxed">
+            <p className="text-gray-600 font-geist text-[20px] leading-relaxed">
               No more 'nothing to wear' meltdowns! Whether you're shuffling your
               closet or finding that one specific look for you, Zuri has sorted
               your looks to make sure you stay a 10/10. Walk into every room
@@ -55,16 +67,28 @@ export default function QuickStyleSection() {
         <div className="bg-white rounded-3xl shadow-sm border-[#E0D4D7] border-[0.6px]">
           <div
             className="flex justify-center mb-6"
-            style={{
-              backgroundImage: `url('data:image/svg+xml,<svg width="1000" height="400" xmlns="http://www.w3.org/2000/svg"><defs><pattern id="wave" x="0" y="0" width="100" height="100" patternUnits="userSpaceOnUse"><path d="M0,50 Q25,25 50,50 T100,50" stroke="%23e5e7eb" fill="none" stroke-width="0.5"/></pattern></defs><rect width="1000" height="400" fill="url(%23wave)"/></svg>')`,
-              backgroundSize: "cover",
-            }}
+            // style={{
+            //   backgroundImage: `url('data:image/svg+xml,<svg width="1000" height="400" xmlns="http://www.w3.org/2000/svg"><defs><pattern id="wave" x="0" y="0" width="100" height="100" patternUnits="userSpaceOnUse"><path d="M0,50 Q25,25 50,50 T100,50" stroke="%23e5e7eb" fill="none" stroke-width="0.5"/></pattern></defs><rect width="1000" height="400" fill="url(%23wave)"/></svg>')`,
+            //   backgroundSize: "cover",
+            // }}
           >
-            <img
-              src="https://images.unsplash.com/photo-1583496661160-fb5886a0aaaa?w=400"
-              alt="Featured outfit"
-              className="w-48 h-64 object-cover rounded-2xl"
-            />
+            <div className="flex flex-row gap-4 px-4 py-16">
+              <Image
+                src="/Frame 1707492214.png"
+                alt="PNG1"
+                width={299.5}
+                height={158.08}
+                className="w-[270px] h-[130px] object-contain"
+              />
+
+              <Image
+                src="/Group 1707491972.png"
+                alt="PNG2"
+                width={299.5}
+                height={158.08}
+                className="w-[270px] h-[130px] object-contain"
+              />
+            </div>
           </div>
 
           <div className="space-y-4 bg-linear-to-b from-pink-100 to-white rounded-b-3xl p-4">
@@ -108,7 +132,7 @@ export default function QuickStyleSection() {
           </div>
 
           <div className="space-y-4 bg-linear-to-b from-pink-100 to-white rounded-b-3xl p-4">
-            <h2 className="text-[24px] font-semibold text-gray-800">
+            <h2 className="text-[20px] font-geist font-semibold text-gray-800">
               Quick Style
             </h2>
             <p className="text-gray-600 text-[20px] leading-relaxed">
