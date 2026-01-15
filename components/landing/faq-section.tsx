@@ -40,14 +40,14 @@ export default function FAQAccordion() {
   };
 
   return (
-    <div className="min-h-screen bg-white py-6 sm:py-8 md:py-12 px-4 sm:px-6 md:px-8">
+    <div className="min-h-screen bg-white px-4 sm:px-6 md:px-8">
       <div className="max-w-4xl mx-auto">
         {/* Header */}
-        <div className="text-center mb-8 sm:mb-10 md:mb-12">
-          <h1 className="text-3xl sm:text-4xl md:text-5xl lg:text-[54px] font-bold text-gray-800 mb-3 sm:mb-4">
+        <div className="text-center mb-6 sm:mb-8">
+          <h1 className="text-xl sm:text-2xl md:text-3xl lg:text-[32px] font-bold text-gray-800 mb-3 sm:mb-4">
             Frequently Asked <span className="text-[#E25C7E]">Questions</span>
           </h1>
-          <p className="text-gray-600 text-base sm:text-lg md:text-xl px-2">
+          <p className="text-gray-600 text-sm sm:text-base md:text-base px-2">
             Get fashion advice made for your body, your skin tone, and your
           </p>
         </div>
@@ -60,34 +60,34 @@ export default function FAQAccordion() {
               className="bg-white rounded-lg overflow-hidden transition-all duration-300 "
             >
               {/* Question Header */}
-                <button
+              <button
                 onClick={() => toggleAccordion(index)}
-                className="w-full px-4 sm:px-5 md:px-6 py-4 sm:py-5 flex items-center justify-between text-left hover:bg-gray-50 transition-colors"
-                >
-                <span className="text-base sm:text-lg md:text-xl lg:text-2xl font-medium font-fields text-[#000000] pr-4 sm:pr-6 md:pr-8 flex-1">
+                className="w-full px-4 sm:px-5 md:px-6 py-3 sm:py-4 flex items-center justify-between text-left"
+              >
+                <span className="text-sm sm:text-base md:text-[14.4px] lg:text-[16px] font-medium font-fields text-[#000000] pr-4 sm:pr-6 md:pr-8 flex-1">
                   {faq.question}
                 </span>
                 <div
                   className={`shrink-0 w-7 h-7 sm:w-8 sm:h-8 rounded-full bg-pink-100 flex items-center justify-center transition-transform duration-300 ${
-                  openIndex === index ? 'rotate-45' : ''
+                    openIndex === index ? "rotate-45" : ""
                   }`}
                 >
                   <PlusCircle className="w-4 h-4 sm:w-5 sm:h-5 text-[#E25C7E]" />
                 </div>
-                </button>
-                <div className="border-b border-[#E6CED4] my-1 sm:my-2" /> {/* Thin pink line */}
-                {/* Answer Content */}
-                <div
+              </button>
+              <div className="border-b border-[#E6CED4]" /> {/* Thin pink line */}
+              {/* Answer Content */}
+              <div
                 className={`overflow-hidden transition-all duration-300 ease-in-out ${
-                  openIndex === index ? 'max-h-96 opacity-100' : 'max-h-0 opacity-0'
+                  openIndex === index ? "max-h-96 opacity-100" : "max-h-0 opacity-0"
                 }`}
-                >
-                <div className="px-4 sm:px-5 md:px-6 pb-4 sm:pb-5 pt-2">
-                  <p className="text-gray-600 leading-relaxed font-fields text-sm sm:text-base">
+              >
+                <div className="px-4 sm:px-5 md:px-6 pb-3 sm:pb-4 pt-2">
+                  <p className="text-gray-600 leading-relaxed font-fields text-xs sm:text-sm md:text-[14.4px] lg:text-base">
                     {faq.answer}
                   </p>
                 </div>
-                </div>
+              </div>
             </div>
           ))}
         </div>

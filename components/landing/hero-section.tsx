@@ -217,7 +217,7 @@ export function HeroSection({ onWaitlist }: HeroSectionProps) {
               alt="card"
               width={160}
               height={160}
-              className="hidden lg:block absolute left-[0%] w-auto h-auto top-90"
+              className="hidden lg:block absolute left-[0%] w-auto h-auto top-80"
             />
             <Image
               src="/Group 1707491891.png"
