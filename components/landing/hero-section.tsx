@@ -2,6 +2,12 @@ import Image from "next/image";
 import { Button } from "@/components/ui/button";
 import type { Stat } from "@/lib/landing-data";
 import { ArrowUpRight, Star } from "lucide-react";
+import {
+  OutfitCard1,
+  OutfitCard2,
+  OutfitCard3,
+  OutfitCard4,
+} from "@/components/ui/outfitCard";
 
 type HeroSectionProps = {
   onWaitlist: () => void;
@@ -190,7 +196,7 @@ export function HeroSection({ onWaitlist }: HeroSectionProps) {
           <div className="relative w-full max-w-[700px] h-[300px] sm:h-[400px] md:h-[500px] lg:h-[550px]">
             {/* Center Phone */}
             <div className="absolute left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2 z-30">
-              <div className="rounded-[30px] sm:rounded-[35px] md:rounded-[40px] bg-[#EDEDED] p-2 sm:p-2.5 md:p-3 shadow-2xl h-[280px] w-[140px] sm:h-[350px] sm:w-[175px] md:h-[420px] md:w-[210px] lg:h-[500px] lg:w-[250px]">
+              <div className="rounded-[30px] sm:rounded-[35px] md:rounded-[40px] bg-[#E9E6E6] p-2 sm:p-2.5 md:p-3 h-[280px] w-[140px] sm:h-[350px] sm:w-[175px] md:h-[420px] md:w-[210px] lg:h-[500px] lg:w-[250px]">
                 <Image
                   src="/Mask group.png"
                   alt="Phone mockup"
@@ -203,36 +209,22 @@ export function HeroSection({ onWaitlist }: HeroSectionProps) {
 
             {/* LEFT SIDE FLOATING CARDS - Hidden on mobile, shown on larger screens */}
 
-            <Image
-              src="/Group 1707491969.png"
-              alt="card"
-              width={140}
-              height={140}
-              className="hidden md:block absolute -left-[60px] lg:-left-[100px] top-[20px] md:top-[30px] lg:top-[40px] z-10 w-[80px] h-[80px] md:w-[100px] md:h-[100px] lg:w-[140px] lg:h-[140px]"
-            />
-
-            <Image
-              src="/Group 1707491891.png"
-              alt="card"
-              width={150}
-              height={150}
-              className="hidden lg:block absolute left-8 lg:left-12 top-[40px] lg:top-[60px] z-10 w-[100px] h-[100px] lg:w-[150px] lg:h-[150px]"
-            />
-
-            <Image
-              src="/Group 1707491965.png"
-              alt="card"
-              width={130}
-              height={130}
-              className="hidden md:block absolute -left-[30px] lg:-left-[50px] top-[140px] md:top-[180px] lg:top-[240px] z-10 w-[70px] h-[70px] md:w-[90px] md:h-[90px] lg:w-[130px] lg:h-[130px]"
-            />
+            <OutfitCard1 imageSrc="/d1.png" title="How do I look?" />
+            <OutfitCard2 imageSrc="/d2.png" title="How do I look?" />
 
             <Image
               src="/Frame 1707492289.png"
               alt="card"
               width={160}
               height={160}
-              className="hidden lg:block absolute left-8 lg:left-12 top-[200px] lg:top-[340px] z-10 w-[120px] h-[120px] lg:w-[160px] lg:h-[160px]"
+              className="hidden lg:block absolute left-[0%] w-auto h-auto top-90"
+            />
+            <Image
+              src="/Group 1707491891.png"
+              alt="card"
+              width={160}
+              height={160}
+              className="hidden lg:block absolute left-[0%] w-auto h-auto top-20"
             />
 
             {/* RIGHT SIDE FLOATING CARDS - Hidden on mobile, shown on larger screens */}
@@ -242,32 +234,24 @@ export function HeroSection({ onWaitlist }: HeroSectionProps) {
               alt="card"
               width={150}
               height={150}
-              className="hidden lg:block absolute right-8 lg:right-12 top-[50px] lg:top-[70px] z-20 w-[100px] h-[100px] lg:w-[150px] lg:h-[150px]"
+              className="
+        hidden lg:block absolute
+        right-[0%]
+        top-20
+        w-auto h-auto
+      "
             />
 
-            <Image
-              src="Group 1707491966.svg"
-              alt="card"
-              width={180}
-              height={180}
-              className="hidden md:block absolute -right-[70px] lg:-right-[120px] top-[10px] md:top-[20px] lg:top-6 rotate-12 z-10 w-[100px] h-[100px] md:w-[130px] md:h-[130px] lg:w-[180px] lg:h-[180px]"
-            />
-
-            <Image
-              src="/Group 1707491965.png"
-              alt="card"
-              width={130}
-              height={130}
-              className="hidden md:block absolute -right-[40px] lg:-right-[70px] top-[120px] md:top-[150px] lg:top-[210px] rotate-12 z-20 w-[70px] h-[70px] md:w-[90px] md:h-[90px] lg:w-[130px] lg:h-[130px]"
-            />
 
             <Image
               src="/Group 1707491950.png"
               alt="card"
               width={160}
               height={160}
-              className="hidden lg:block absolute right-8 lg:right-12 top-[180px] lg:top-[300px] z-10 w-[120px] h-[120px] lg:w-[160px] lg:h-[160px]"
+              className="hidden lg:block absolute right-[0%] w-auto h-auto top-70"
             />
+            <OutfitCard3 imageSrc="/d4.png" title="Help me style this?" />
+            <OutfitCard4 imageSrc="/d3.png" title="How do I look?" />
           </div>
         </div>
       </section>
