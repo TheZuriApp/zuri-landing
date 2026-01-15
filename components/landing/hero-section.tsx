@@ -21,11 +21,7 @@ export function HeroSection({ onWaitlist }: HeroSectionProps) {
           backgroundSize: "40px 40px",
         }}
       >
-        <Image
-          src="/Vector 447.svg"
-          alt="Dot pattern"
-          fill
-        />
+        <Image src="/Vector 447.svg" alt="Dot pattern" fill />
       </div>
 
       {/* nav bar */}
@@ -44,10 +40,10 @@ export function HeroSection({ onWaitlist }: HeroSectionProps) {
             backdrop-blur-md
           "
         >
-          <Image 
-            src="/Group 1778.png" 
-            alt="Zuri logo" 
-            width={40} 
+          <Image
+            src="/Group 1778.png"
+            alt="Zuri logo"
+            width={40}
             height={40}
             className="w-8 h-8 sm:w-10 sm:h-10"
           />
@@ -95,7 +91,21 @@ export function HeroSection({ onWaitlist }: HeroSectionProps) {
             Powered by AI
           </h1>
 
-          <p className="mx-auto mt-4 max-w-md text-sm sm:text-base text-[#6B6B6B] font-geist px-2">
+          <p
+            className="
+    mx-auto
+    mt-4
+    max-w-md
+    text-[20px]
+    leading-[30px]
+    font-geist
+    font-light
+    text-center
+    tracking-[0]
+    text-[#6B6B6B]
+    px-2
+  "
+          >
             Get fashion advice made simple, personal, and perfectly you.
           </p>
 
