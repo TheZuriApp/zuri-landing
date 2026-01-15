@@ -14,11 +14,32 @@ export function HeroSection({ onWaitlist }: HeroSectionProps) {
       <div className="absolute inset-0 bg-gradient-to-b from-[#FFF5F7] via-[#FFF0F3] to-white -z-10" />
       {/* /* Subtle dot pattern overlay */}
       <div
-        className="absolute inset-0 -z-10 opacity-[0.75]"
+        className="absolute inset-0 -z-10"
         style={{
-          backgroundImage:
-            "radial-gradient(circle, #E25C7E 1px, transparent 1px)",
-          backgroundSize: "40px 40px",
+          backgroundImage: `
+      linear-gradient(to right, rgba(226,92,126,0.06) 1px, transparent 1px),
+      linear-gradient(to bottom, rgba(226,92,126,0.06) 1px, transparent 1px)
+    `,
+          // size of grid
+          backgroundSize: "56px 56px",
+
+          WebkitMaskImage: `
+      linear-gradient(
+        to right,
+        transparent 0%,
+        black 15%,
+        black 85%,
+        transparent 100%
+      ),
+      linear-gradient(
+        black 0%,
+        black 45%,
+        transparent 100%
+
+      )
+    `,
+          WebkitMaskComposite: "destination-in",
+          maskComposite: "intersect",
         }}
       >
         <Image src="/Vector 447.svg" alt="Dot pattern" fill />
@@ -31,7 +52,7 @@ export function HeroSection({ onWaitlist }: HeroSectionProps) {
             flex items-center gap-2 sm:gap-4 md:gap-6
             rounded-full
             border border-black/5
-            bg-white/30
+            bg-[#FFFFFF80]
             px-3 sm:px-4 md:px-6 py-2
             h-12 sm:h-14
             w-full
@@ -43,20 +64,20 @@ export function HeroSection({ onWaitlist }: HeroSectionProps) {
           <Image
             src="/Group 1778.png"
             alt="Zuri logo"
-            width={40}
-            height={40}
-            className="w-8 h-8 sm:w-10 sm:h-10"
+            width={52}
+            height={103}
+            className="w-[52px] h-[103px] sm:w-10 sm:h-10"
           />
 
           <div className="flex-1 hidden md:block" />
           <nav className="hidden lg:flex items-center gap-3 xl:gap-5 text-xs xl:text-sm">
-            <button className="text-xs xl:text-sm font-outfit text-[#555555] tracking-wide hover:text-[#E25C7E] transition-colors">
+            <button className="text-[10.8px] xl:text-sm font-outfit text-[#555555] tracking-wide hover:text-[#E25C7E] transition-colors">
               CAREER
             </button>
-            <button className="text-xs xl:text-sm font-outfit text-[#555555] tracking-wide hover:text-[#E25C7E] transition-colors">
+            <button className="text-[10.8px] xl:text-sm font-outfit text-[#555555] tracking-wide hover:text-[#E25C7E] transition-colors">
               CONTACT US
             </button>
-            <button className="text-xs xl:text-sm font-outfit text-[#555555] tracking-wide hover:text-[#E25C7E] transition-colors">
+            <button className="text-[10.8px] xl:text-sm font-outfit text-[#555555] tracking-wide hover:text-[#E25C7E] transition-colors">
               ZURI MAGAZINE
             </button>
           </nav>
@@ -65,25 +86,32 @@ export function HeroSection({ onWaitlist }: HeroSectionProps) {
 
           <button
             className="
-          rounded-full
-          bg-gradient-to-r from-[#E25C7E33] to-[#F2D1DA]
-          px-3 sm:px-4 py-1
-          text-xs sm:text-sm font-outfit text-[#4E4D4D]
-          shadow-sm
-          hover:opacity-90
-          transition
-          whitespace-nowrap
-          "
+    rounded-full
+    bg-gradient-to-r
+    from-[#F2D1DA]
+    to-[rgba(226,92,126,0.2)]
+    px-[20px]
+    py-[10px]
+    text-[12px]
+    leading-[100%]
+    tracking-[0]
+    font-outfit
+    font-normal
+    text-[#4E4D4D]
+    shadow-[0_4px_12px_0_rgba(226,92,126,0.2)]
+    hover:opacity-100
+    transition
+    whitespace-nowrap
+  "
           >
-            <span className="hidden sm:inline">Try for free</span>
-            <span className="sm:hidden">Try</span>
+            Try for free
           </button>
         </div>
       </div>
       <section className="relative min-h-[500px] sm:min-h-[600px] md:min-h-[700px] flex flex-col pt-20 sm:pt-24 md:pt-32 px-4">
         {/* Text content */}
         <div className="relative z-10 max-w-3xl mx-auto text-center px-4">
-          <h1 className="font-fields font-semibold text-3xl sm:text-4xl md:text-5xl leading-tight sm:leading-none tracking-normal text-center text-[#2B2B2B]">
+          <h1 className="font-fields font-semibold text-3xl sm:text-4xl md:text-[48px] leading-tight sm:leading-none tracking-normal text-center text-[#2B2B2B]">
             Your Personal Stylist
           </h1>
 
@@ -96,7 +124,7 @@ export function HeroSection({ onWaitlist }: HeroSectionProps) {
     mx-auto
     mt-4
     max-w-md
-    text-[20px]
+    text-[12px]
     leading-[30px]
     font-geist
     font-light
@@ -120,13 +148,13 @@ export function HeroSection({ onWaitlist }: HeroSectionProps) {
                   alt="Google Play"
                   width={28}
                   height={28}
-                  className="w-6 h-6 sm:w-7 sm:h-7"
+                  className="w-[30px] h-[37.5px] sm:w-7 sm:h-7"
                 ></Image>
                 <div className="flex flex-col">
-                  <span className="text-left text-[10px] sm:text-xs text-[#333333]">
+                  <span className="text-left text-[4px] sm:text-xs text-[#333333]">
                     Get it on
                   </span>
-                  <div className="text-left text-[10px] sm:text-xs font-semibold text-[#000000]">
+                  <div className="text-left text-[8px] sm:text-xs font-semibold text-[#000000]">
                     Google Play
                   </div>
                 </div>
@@ -142,13 +170,13 @@ export function HeroSection({ onWaitlist }: HeroSectionProps) {
                   alt="App Store"
                   width={28}
                   height={28}
-                  className="w-6 h-6 sm:w-7 sm:h-7"
+                  className="w-[30px] h-[37.5px] sm:w-7 sm:h-7"
                 ></Image>
                 <div className="flex flex-col">
-                  <span className="text-left text-[10px] sm:text-xs text-[#333333]">
+                  <span className="text-left text-[4px] sm:text-xs text-[#333333]">
                     Download on
                   </span>
-                  <div className="text-left text-[10px] sm:text-xs font-semibold text-[#000000]">
+                  <div className="text-left text-[8px] sm:text-xs font-semibold text-[#000000]">
                     App Store
                   </div>
                 </div>
