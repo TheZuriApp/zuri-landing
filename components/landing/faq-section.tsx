@@ -40,11 +40,11 @@ export default function FAQAccordion() {
   };
 
   return (
-    <div className="bg-white px-4 sm:px-6 md:px-8 py-8 sm:py-12 md:py-16">
+    <div className="bg-white px-4 sm:px-6 md:px-8 py-8 sm:py-12 md:py-16 rounded-b-[48px]">
       <div className="max-w-4xl mx-auto">
         {/* Header */}
-        <div className="text-center mb-6 sm:mb-8">
-          <h1 className="text-xl sm:text-2xl md:text-3xl lg:text-[32px] font-bold text-gray-800 mb-3 sm:mb-4">
+        <div className="text-center mb-6 sm:mb-8 ">
+          <h1 className="text-xl sm:text-2xl md:text-3xl lg:text-[32px] font-bold text-gray-800 mb-3 sm:mb-4 ">
             Frequently Asked <span className="text-[#E25C7E]">Questions</span>
           </h1>
           <p className="text-gray-600 text-sm sm:text-base md:text-base px-2">
@@ -53,7 +53,7 @@ export default function FAQAccordion() {
         </div>
 
         {/* FAQ Accordion */}
-        <div className="space-y-3 sm:space-y-4">
+        <div className="space-y-3 sm:space-y-4 ">
           {faqs.map((faq, index) => (
             <div
               key={index}

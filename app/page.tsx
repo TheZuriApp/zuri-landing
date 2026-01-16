@@ -12,7 +12,7 @@ export default function Home() {
   const openWaitlist = () => setWaitlistOpen(true);
 
   return (
-    <div className="relative bg-white overflow-x-hidden">
+    <div className="relative bg-linear-to-b from-[#FFEDF2] to-[#FFF6F8] overflow-x-hidden">
       <div className="relative z-10 w-full overflow-x-hidden">
         <HeroSection
           onWaitlist={openWaitlist}

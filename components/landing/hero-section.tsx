@@ -9,6 +9,8 @@ import {
   OutfitCard2,
   OutfitCard3,
   OutfitCard4,
+  QuoteCard,
+  AskZuriCard,
 } from "@/components/ui/outfitCard";
 import { useState } from "react";
 
@@ -22,18 +24,17 @@ export function HeroSection({ onWaitlist }: HeroSectionProps) {
   return (
     <header className="relative min-h-screen flex flex-col gap-4 pt-2 overflow-hidden">
       {/* Background gradient and pattern */}
-      <div className="absolute inset-0 bg-gradient-to-b from-[#FFF5F7] via-[#FFF0F3] to-white -z-10" />
+      <div className="absolute inset-0 -z-10" />
       {/* /* Subtle dot pattern overlay */}
+      {/* Grid background (masked) */}
       <div
-        className="absolute inset-0 -z-10"
+        className="absolute inset-0 -z-20"
         style={{
           backgroundImage: `
       linear-gradient(to right, rgba(226,92,126,0.06) 1px, transparent 1px),
       linear-gradient(to bottom, rgba(226,92,126,0.06) 1px, transparent 1px)
     `,
-          // size of grid
           backgroundSize: "56px 56px",
-
           WebkitMaskImage: `
       linear-gradient(
         to right,
@@ -46,15 +47,26 @@ export function HeroSection({ onWaitlist }: HeroSectionProps) {
         black 0%,
         black 45%,
         transparent 100%
-
       )
     `,
           WebkitMaskComposite: "destination-in",
           maskComposite: "intersect",
         }}
-      >
-        <Image src="/Vector 447.svg" alt="Dot pattern" fill />
-      </div>
+      />
+
+      {/* SVG (NO mask applied) */}
+      <img
+        src="/Vector 447.svg"
+        alt="Dot pattern"
+        className="
+    absolute
+    top-[73%]
+    left-1/2
+    -translate-x-1/2
+    -translate-y-1/2
+    z-0
+  "
+      />
 
       {/* nav bar */}
       <div className="fixed top-2 sm:top-4 left-0 right-0 z-50 flex items-center justify-center px-2 sm:px-4">
@@ -132,7 +144,7 @@ export function HeroSection({ onWaitlist }: HeroSectionProps) {
             Start Styling
           </button>
         </div>
-        
+
         {/* Mobile Menu Dropdown */}
         {mobileMenuOpen && (
           <div className="lg:hidden fixed top-16 left-2 right-2 z-50 bg-white rounded-2xl border border-black/5 shadow-[0_10px_30px_rgba(12,6,24,0.07)] backdrop-blur-md mt-2">
@@ -268,14 +280,7 @@ export function HeroSection({ onWaitlist }: HeroSectionProps) {
 
             <OutfitCard1 imageSrc="/d1.png" title="How do I look?" />
             <OutfitCard2 imageSrc="/d2.png" title="How do I look?" />
-
-            <Image
-              src="/Frame 1707492289.png"
-              alt="card"
-              width={160}
-              height={160}
-              className="hidden lg:block absolute left-[0%] w-auto h-auto top-80"
-            />
+            <QuoteCard />
             <Image
               src="/Group 1707491891.png"
               alt="card"
@@ -286,7 +291,7 @@ export function HeroSection({ onWaitlist }: HeroSectionProps) {
 
             {/* RIGHT SIDE FLOATING CARDS - Hidden on mobile, shown on larger screens */}
 
-            <Image
+            {/* <Image
               src="/Frame 1707492175.png"
               alt="card"
               width={150}
@@ -297,8 +302,9 @@ export function HeroSection({ onWaitlist }: HeroSectionProps) {
         top-20
         w-auto h-auto
       "
-            />
+            /> */}
 
+            <AskZuriCard />
 
             <Image
               src="/Group 1707491950.png"

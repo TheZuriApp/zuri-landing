@@ -18,9 +18,9 @@ export default function QuickStyleSection() {
   ];
 
   return (
-    <div className="min-h-screen bg-white p-4 sm:p-6 md:p-8 rounded-t-4xl">
+    <div className="min-h-screen bg-white p-4 sm:p-6 md:p-8 rounded-t-[48px]">
       {/* Top Section */}
-      <div className="max-w-6xl mx-auto grid grid-cols-1 md:grid-cols-[6fr_4fr] gap-4 sm:gap-6 md:gap-4 mb-6 sm:mb-8">
+      <div className="max-w-6xl mx-auto grid grid-cols-1 md:grid-cols-[6fr_4fr] gap-4 sm:gap-6 md:gap-8 mb-6 sm:mb-8">
         {/* Left Card */}
         <div className="bg-white rounded-2xl sm:rounded-3xl border-[#E0D4D7] border-[0.6px] overflow-hidden flex flex-col">
           <div className="flex justify-center items-end mb-4 sm:mb-6 flex-1 min-h-[180px] sm:min-h-[220px] md:min-h-[171px]">
@@ -91,7 +91,7 @@ export default function QuickStyleSection() {
       </div>
 
       {/* Bottom Section */}
-      <div className="max-w-6xl mx-auto grid grid-cols-1 md:grid-cols-[4fr_6fr] gap-4 sm:gap-6 md:gap-4 mb-6 sm:mb-8">
+      <div className="max-w-6xl mx-auto grid grid-cols-1 md:grid-cols-[4fr_6fr] gap-4 sm:gap-6 md:gap-8 mb-6 sm:mb-8">
         {/* Left Card */}
         <div className="bg-white rounded-2xl sm:rounded-3xl border-[#E0D4D7] border-[0.6px] overflow-hidden flex flex-col">
           {/* Top Image Section */}
@@ -119,12 +119,20 @@ export default function QuickStyleSection() {
 
         {/* Right Card */}
         <div className="bg-white rounded-2xl sm:rounded-3xl border-[#E0D4D7] border-[0.6px] overflow-hidden flex flex-col">
-          <div className="flex justify-center items-end mb-4 sm:mb-6 flex-1 min-h-[180px] sm:min-h-[220px] md:min-h-[171px]">
-            <img
-              src="/Group 1707491947.png"
-              alt="Featured outfit"
-              className="w-[260px] max-w-[220px] sm:max-w-[320px] md:max-w-[360px] lg:max-w-[420px] h-auto object-contain rounded-xl sm:rounded-2xl px-4"
-            />
+          <div className="flex justify-center items-end mb-4 sm:mb-6 flex-1 min-h-[180px] sm:min-h-[220px] md:min-h-[231px]">
+           <img
+  src="/Group 1707491947.png"
+  alt="Featured outfit"
+  className="
+    w-[360px]
+    sm:w-[300px]
+    md:w-[340px]
+    lg:w-[380px]
+    object-contain
+    rounded-xl sm:rounded-2xl px-4
+  "
+/>
+
           </div>
 
           <div className="space-y-3 sm:space-y-4 bg-gradient-to-b from-pink-100 to-white rounded-b-2xl sm:rounded-b-3xl p-4 sm:p-5 md:p-6 flex-1 flex flex-col justify-center">
