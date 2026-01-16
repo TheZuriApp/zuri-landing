@@ -1,19 +1,24 @@
+"use client";
+
 import Image from "next/image";
 import { Button } from "@/components/ui/button";
 import type { Stat } from "@/lib/landing-data";
-import { ArrowUpRight, Star } from "lucide-react";
+import { ArrowUpRight, Star, Menu, X } from "lucide-react";
 import {
   OutfitCard1,
   OutfitCard2,
   OutfitCard3,
   OutfitCard4,
 } from "@/components/ui/outfitCard";
+import { useState } from "react";
 
 type HeroSectionProps = {
   onWaitlist: () => void;
 };
 
 export function HeroSection({ onWaitlist }: HeroSectionProps) {
+  const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
+
   return (
     <header className="relative min-h-screen flex flex-col gap-4 pt-2 overflow-hidden">
       {/* Background gradient and pattern */}
@@ -68,11 +73,11 @@ export function HeroSection({ onWaitlist }: HeroSectionProps) {
           "
         >
           <Image
-            src="/Group 1778.png"
+            src="/zuri-logo.png"
             alt="Zuri logo"
             width={52}
             height={103}
-            className="w-[52px] h-[103px] sm:w-10 sm:h-10"
+            className="w-8 h-auto sm:w-10 md:w-12"
           />
 
           <div className="flex-1 hidden md:block" />
@@ -89,6 +94,19 @@ export function HeroSection({ onWaitlist }: HeroSectionProps) {
           </nav>
 
           <div className="flex-1 hidden md:block" />
+
+          {/* Mobile Menu Button */}
+          <button
+            onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
+            className="lg:hidden p-2 text-[#555555] hover:text-[#E25C7E] transition-colors"
+            aria-label="Toggle menu"
+          >
+            {mobileMenuOpen ? (
+              <X className="w-5 h-5" />
+            ) : (
+              <Menu className="w-5 h-5" />
+            )}
+          </button>
 
           <button
             className="
@@ -108,21 +126,59 @@ export function HeroSection({ onWaitlist }: HeroSectionProps) {
     hover:opacity-100
     transition
     whitespace-nowrap
+    hidden sm:block
   "
           >
-            Try for free
+            Start Styling
           </button>
         </div>
+        
+        {/* Mobile Menu Dropdown */}
+        {mobileMenuOpen && (
+          <div className="lg:hidden fixed top-16 left-2 right-2 z-50 bg-white rounded-2xl border border-black/5 shadow-[0_10px_30px_rgba(12,6,24,0.07)] backdrop-blur-md mt-2">
+            <nav className="flex flex-col p-4 gap-3">
+              <button className="text-sm font-outfit text-[#555555] tracking-wide hover:text-[#E25C7E] transition-colors text-left py-2">
+                CAREER
+              </button>
+              <button className="text-sm font-outfit text-[#555555] tracking-wide hover:text-[#E25C7E] transition-colors text-left py-2">
+                CONTACT US
+              </button>
+              <button className="text-sm font-outfit text-[#555555] tracking-wide hover:text-[#E25C7E] transition-colors text-left py-2">
+                Meet the Team
+              </button>
+              <button
+                className="
+                  rounded-full
+                  bg-gradient-to-r
+                  from-[#F2D1DA]
+                  to-[rgba(226,92,126,0.2)]
+                  px-[20px]
+                  py-[10px]
+                  text-[12px]
+                  font-outfit
+                  font-normal
+                  text-[#4E4D4D]
+                  shadow-[0_4px_12px_0_rgba(226,92,126,0.2)]
+                  hover:opacity-100
+                  transition
+                  mt-2
+                "
+              >
+                Start Styling
+              </button>
+            </nav>
+          </div>
+        )}
       </div>
-      <section className="relative min-h-[500px] sm:min-h-[600px] md:min-h-[700px] flex flex-col pt-20 sm:pt-24 md:pt-32 px-4">
+      <section className="relative min-h-[400px] sm:min-h-[600px] md:min-h-[700px] flex flex-col pt-20 sm:pt-24 md:pt-32 px-4 pb-4 sm:pb-4 md:pb-8">
         {/* Text content */}
         <div className="relative z-10 max-w-3xl mx-auto text-center px-4">
           <h1 className="font-fields font-semibold text-3xl sm:text-4xl md:text-[48px] leading-tight sm:leading-none tracking-normal text-center text-[#2B2B2B]">
-            Your Personal Stylist
+            Your AI Personal Stylist
           </h1>
 
           <h1 className="mt-2 text-3xl sm:text-4xl md:text-5xl font-semibold leading-tight text-[#D96A7B]">
-            Powered by AI
+            that truly gets you
           </h1>
 
           <p
@@ -140,12 +196,13 @@ export function HeroSection({ onWaitlist }: HeroSectionProps) {
     px-2
   "
           >
-            Get fashion advice made simple, personal, and perfectly you.
+            {/* Get fashion advice made simple, personal, and perfectly you. */}
+            Look Styled. Feel Confident. Every day.
           </p>
 
           <div className="mt-6 sm:mt-8 flex flex-col sm:flex-row justify-center gap-3 sm:gap-4 md:gap-5">
             <Button
-              className="bg-[#ffffff] hover:bg-[#f0f0f0] px-4 sm:px-5 py-2 text-xs sm:text-sm font-medium rounded-sm h-10 sm:h-11 w-full sm:w-auto"
+              className="bg-[#ffffff] hover:bg-[#f0f0f0] px-3 sm:px-5 py-2 text-xs sm:text-sm font-medium rounded-sm h-10 sm:h-11 w-auto max-w-[200px] sm:max-w-none sm:w-auto mx-auto sm:mx-0"
               onClick={onWaitlist}
             >
               <div className="flex items-center gap-2">
@@ -167,7 +224,7 @@ export function HeroSection({ onWaitlist }: HeroSectionProps) {
               </div>
             </Button>
             <Button
-              className="bg-[#ffffff] hover:bg-[#f0f0f0] px-4 sm:px-5 py-2 text-xs sm:text-sm font-medium rounded-sm h-10 sm:h-11 w-full sm:w-auto"
+              className="bg-[#ffffff] hover:bg-[#f0f0f0] px-3 sm:px-5 py-2 text-xs sm:text-sm font-medium rounded-sm h-10 sm:h-11 w-auto max-w-[200px] sm:max-w-none sm:w-auto mx-auto sm:mx-0"
               onClick={onWaitlist}
             >
               <div className="flex items-center gap-2">
@@ -191,9 +248,9 @@ export function HeroSection({ onWaitlist }: HeroSectionProps) {
           </div>
         </div>
 
-        <div className="relative w-full flex justify-center mt-6 sm:mt-8 md:mt-12 px-4">
+        <div className="relative w-full flex justify-center mt-4 sm:mt-8 md:mt-12 px-4">
           {/* Wrapper */}
-          <div className="relative w-full max-w-[700px] h-[300px] sm:h-[400px] md:h-[500px] lg:h-[550px]">
+          <div className="relative w-full max-w-[700px] h-[280px] sm:h-[400px] md:h-[500px] lg:h-[550px]">
             {/* Center Phone */}
             <div className="absolute left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2 z-30">
               <div className="rounded-[30px] sm:rounded-[35px] md:rounded-[40px] bg-[#E9E6E6] p-2 sm:p-2.5 md:p-3 h-[280px] w-[140px] sm:h-[350px] sm:w-[175px] md:h-[420px] md:w-[210px] lg:h-[500px] lg:w-[250px]">

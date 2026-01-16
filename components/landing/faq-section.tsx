@@ -40,7 +40,7 @@ export default function FAQAccordion() {
   };
 
   return (
-    <div className="min-h-screen bg-white px-4 sm:px-6 md:px-8">
+    <div className="bg-white px-4 sm:px-6 md:px-8 py-8 sm:py-12 md:py-16">
       <div className="max-w-4xl mx-auto">
         {/* Header */}
         <div className="text-center mb-6 sm:mb-8">

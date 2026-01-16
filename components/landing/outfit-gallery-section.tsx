@@ -28,13 +28,13 @@ export default function OutfitImages() {
   }, []);
 
   const outfitImages = [
-    "https://images.unsplash.com/photo-1515372039744-b8f02a3ae446?w=300&h=400&fit=crop",
-    "https://images.unsplash.com/photo-1539008835657-9e8e9680c956?w=300&h=400&fit=crop",
-    "https://images.unsplash.com/photo-1509631179647-0177331693ae?w=300&h=400&fit=crop",
-    "https://images.unsplash.com/photo-1524504388940-b1c1722653e1?w=300&h=400&fit=crop",
-    "https://images.unsplash.com/photo-1469334031218-e382a71b716b?w=300&h=400&fit=crop",
-    "https://images.unsplash.com/photo-1502716119720-b23a93e5fe1b?w=300&h=400&fit=crop",
-    "https://images.unsplash.com/photo-1496747611176-843222e1e57c?w=300&h=400&fit=crop",
+    "/images/outfitls/o4.png",
+    "/images/outfitls/o5.png",
+    "/images/outfitls/o6.png",
+    "/images/outfitls/o7.png",
+    "/images/outfitls/o1.png",
+    "/images/outfitls/o2.png",
+    "/images/outfitls/o3.png",
   ];
 
   // Random rotation angles for each image
@@ -78,7 +78,7 @@ export default function OutfitImages() {
                   <img
                     src={img}
                     alt={`Outfit ${idx + 1}`}
-                    className="w-full h-full object-cover"
+                    className="w-full h-full object-contain"
                   />
                 </div>
               ))}

@@ -4,7 +4,7 @@ import { Button } from "@/components/ui/button";
 
 export function CtaSection() {
   return (
-    <section className="w-full bg-linear-to-b from-[#FFEDF2] to-[#FFF6F8] py-4 sm:py-4 md:py-8 lg:py-12 px-4 sm:px-6">
+    <section className="w-full bg-linear-to-b from-[#FFEDF2] to-[#FFF6F8] pt-4 pb-4 sm:pt-4 sm:pb-4 md:pt-8 md:pb-8 lg:pt-12 lg:pb-12 px-4 sm:px-6">
       {/* Center content */}
       <div className="mx-auto max-w-4xl text-center">
         {/* Cards Image */}
