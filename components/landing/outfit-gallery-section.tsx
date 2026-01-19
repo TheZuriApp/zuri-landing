@@ -159,6 +159,8 @@ const originalSlides: Slide[] = [
   { image: "/images/outfitls/p1.png", title: "Wedding Chic" },
   { image: "/images/outfitls/p2.png", title: "Date Night Chic" },
   { image: "/images/outfitls/p3.png", title: "Brunch Chic" },
+  { image: "/images/outfitls/o2.png", title: "Date Night Chic" },
+  { image: "/images/outfitls/o3.png", title: "Brunch Chic" },
 ];
 
 const slides: Slide[] = [
@@ -176,17 +178,21 @@ export default function InfiniteOutfitCarousel() {
   const [isDeleting, setIsDeleting] = useState(false);
 
   useEffect(() => {
-    cardRefs.current[activeIndex]?.scrollIntoView({
+    const container = containerRef.current;
+    const card = cardRefs.current[activeIndex];
+
+    if (!container || !card) return;
+
+    container.scrollTo({
+      left: card.offsetLeft - container.offsetWidth / 2 + card.offsetWidth / 2,
       behavior: "smooth",
-      inline: "center",
-      block: "nearest",
     });
   }, [activeIndex]);
 
   useEffect(() => {
     const fullText = slides[activeIndex].title;
-    const typeSpeed = 60;
-    const deleteSpeed = 40;
+    const typeSpeed = 90;
+    const deleteSpeed = 60;
     const pause = 1000;
 
     let timer: NodeJS.Timeout;
@@ -237,16 +243,16 @@ export default function InfiniteOutfitCarousel() {
 
   return (
     <div className="min-h-screen bg-white flex items-center justify-center px-6">
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-8 sm:py-12 md:py-16">
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-4 sm:py-2 md:py-4">
         <div className="flex flex-col bg-gray-50 rounded-2xl sm:rounded-3xl p-4 sm:p-6 md:p-8 mb-6 sm:mb-8">
-          <div className="mb-4 sm:mb-6 md:mb-8">
-            <h1 className="text-xl sm:text-2xl md:text-[28px] lg:text-[32px] font-bold text-gray-900 mb-3 sm:mb-4 px-2 sm:px-0">
+          <div className="mb-4 sm:mb-6 md:mb-8 justify-center text-center">
+            <h1 className="text-xl sm:text-2xl md:text-[28px] lg:text-[32px] font-bold text-gray-900 mb-3 sm:mb-4">
               We Make Fashion <span className="text-[#E25C7E]">Feel Easy</span>
             </h1>
-            <p className="text-sm sm:text-base md:text-sm text-gray-600 max-w-2xl px-2 sm:px-0">
+            <p className="text-sm sm:text-base md:text-sm text-gray-600 max-w-2xl ">
               Get fashion advice made for your body, your skin tone, and your
             </p>
-            <p className="text-sm sm:text-base md:text-sm text-gray-600 max-w-2xl px-2 sm:px-0">
+            <p className="text-sm sm:text-base md:text-sm text-gray-600 max-w-2xl">
               unique style. Get fashion advice made for your body.
             </p>
           </div>
@@ -266,7 +272,7 @@ export default function InfiniteOutfitCarousel() {
               ${
                 i === activeIndex
                   ? "scale-100 opacity-100"
-                  : "scale-95 opacity-50"
+                  : "scale-95 opacity-100"
               }
             `}
               >
@@ -278,13 +284,28 @@ export default function InfiniteOutfitCarousel() {
 
                 {i === activeIndex && (
                   <div
-                    className="absolute bottom-8 left-1/2 -translate-x-1/2
-                bg-white/60 backdrop-blur-md px-8 py-4 rounded-full shadow-lg"
+                    className="
+    absolute bottom-8 left-1/2 -translate-x-1/2
+    px-8 py-4 rounded-full
+    bg-linear-to-b from-[#505050]/70 to-[#434343]/70
+    backdrop-blur-[2px]
+    shadow-[0_20px_60px_rgba(0,0,0,0.35)]
+  "
                   >
-                    <p className="text-lg font-medium text-gray-900 whitespace-nowrap">
+                    <p className="text-lg font-medium text-white whitespace-nowrap flex items-center">
                       {text}
-                      <span className="ml-1 inline-block w-[2px] h-5 bg-gray-800 animate-pulse" />
+                      <span className="ml-1 inline-block w-[2px] h-5 bg-white/80 animate-pulse" />
                     </p>
+
+                    {/* fake noise overlay */}
+                    <div
+                      className="
+      pointer-events-none absolute inset-0 rounded-full
+      bg-[url('/noise.png')]
+      opacity-10
+      mix-blend-overlay
+    "
+                    />
                   </div>
                 )}
               </div>
