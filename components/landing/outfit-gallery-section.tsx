@@ -159,10 +159,11 @@ const originalSlides: Slide[] = [
   { image: "/images/outfitls/p1.png", title: "Wedding Chic" },
   { image: "/images/outfitls/p2.png", title: "Date Night Chic" },
   { image: "/images/outfitls/p3.png", title: "Brunch Chic" },
-  { image: "/images/outfitls/o2.png", title: "Date Night Chic" },
-  { image: "/images/outfitls/o3.png", title: "Brunch Chic" },
+  // { image: "/images/outfitls/o2.png", title: "Date Night Chic" },
+  // { image: "/images/outfitls/o3.png", title: "Brunch Chic" },
 ];
 
+// clone first + last for infinite effect
 const slides: Slide[] = [
   originalSlides[originalSlides.length - 1],
   ...originalSlides,
@@ -177,10 +178,19 @@ export default function InfiniteOutfitCarousel() {
   const [text, setText] = useState("");
   const [isDeleting, setIsDeleting] = useState(false);
 
+  /* ------------------ AUTO SLIDE ------------------ */
+  useEffect(() => {
+    const interval = setInterval(() => {
+      setActiveIndex((prev) => prev + 1);
+    }, 3000);
+
+    return () => clearInterval(interval);
+  }, []);
+
+  /* ------------------ CENTER ACTIVE CARD ------------------ */
   useEffect(() => {
     const container = containerRef.current;
     const card = cardRefs.current[activeIndex];
-
     if (!container || !card) return;
 
     container.scrollTo({
@@ -189,57 +199,71 @@ export default function InfiniteOutfitCarousel() {
     });
   }, [activeIndex]);
 
+  /* ------------------ INFINITE SNAP FIX ------------------ */
   useEffect(() => {
-    const fullText = slides[activeIndex].title;
+    const container = containerRef.current;
+    if (!container) return;
+
+    if (activeIndex === slides.length - 1) {
+      // reached fake last → snap to real first
+      setTimeout(() => {
+        container.scrollTo({ left: 0, behavior: "auto" });
+        setActiveIndex(1);
+      }, 500);
+    }
+
+    if (activeIndex === 0) {
+      // reached fake first → snap to real last
+      setTimeout(() => {
+        const lastCard = cardRefs.current[slides.length - 2];
+        if (!lastCard) return;
+
+        container.scrollTo({
+          left:
+            lastCard.offsetLeft -
+            container.offsetWidth / 2 +
+            lastCard.offsetWidth / 2,
+          behavior: "auto",
+        });
+
+        setActiveIndex(slides.length - 2);
+      }, 500);
+    }
+  }, [activeIndex]);
+
+  /* ------------------ RESET TYPEWRITER ON SLIDE CHANGE ------------------ */
+  useEffect(() => {
+    setText("");
+    setIsDeleting(false);
+  }, [activeIndex]);
+
+  /* ------------------ TYPEWRITER EFFECT ------------------ */
+  useEffect(() => {
+    const fullText = slides[activeIndex]?.title ?? "";
     const typeSpeed = 90;
     const deleteSpeed = 60;
-    const pause = 1000;
+    const pause = 900;
 
     let timer: NodeJS.Timeout;
 
     if (!isDeleting && text.length < fullText.length) {
-      timer = setTimeout(() => {
-        setText(fullText.slice(0, text.length + 1));
-      }, typeSpeed);
+      timer = setTimeout(
+        () => setText(fullText.slice(0, text.length + 1)),
+        typeSpeed,
+      );
     } else if (!isDeleting && text.length === fullText.length) {
       timer = setTimeout(() => setIsDeleting(true), pause);
     } else if (isDeleting && text.length > 0) {
-      timer = setTimeout(() => {
-        setText(fullText.slice(0, text.length - 1));
-      }, deleteSpeed);
-    } else if (isDeleting && text.length === 0) {
-      setIsDeleting(false);
-      setActiveIndex((prev) => prev + 1);
+      timer = setTimeout(
+        () => setText(fullText.slice(0, text.length - 1)),
+        deleteSpeed,
+      );
     }
 
     return () => clearTimeout(timer);
   }, [text, isDeleting, activeIndex]);
-
-  useEffect(() => {
-    if (!containerRef.current) return;
-
-    // When reaching fake last slide → jump to real first
-    if (activeIndex === slides.length - 1) {
-      setTimeout(() => {
-        containerRef.current!.scrollTo({
-          left: cardRefs.current[1]!.offsetLeft,
-          behavior: "auto",
-        });
-        setActiveIndex(1);
-      }, 350);
-    }
-
-    // When reaching fake first slide → jump to real last
-    if (activeIndex === 0) {
-      setTimeout(() => {
-        containerRef.current!.scrollTo({
-          left: cardRefs.current[slides.length - 2]!.offsetLeft,
-          behavior: "auto",
-        });
-        setActiveIndex(slides.length - 2);
-      }, 350);
-    }
-  }, [activeIndex]);
+  const CARD_WIDTH = 360; // sm:w-[360px]
+  const GAP = 40; // gap-10 → 40px
 
   return (
     <div className="min-h-screen bg-white flex items-center justify-center px-6">
@@ -249,17 +273,20 @@ export default function InfiniteOutfitCarousel() {
             <h1 className="text-xl sm:text-2xl md:text-[28px] lg:text-[32px] font-bold text-gray-900 mb-3 sm:mb-4">
               We Make Fashion <span className="text-[#E25C7E]">Feel Easy</span>
             </h1>
-            <p className="text-sm sm:text-base md:text-sm text-gray-600 max-w-2xl ">
+            <p className="text-sm mx-auto sm:text-base md:text-sm text-gray-600 max-w-2xl ">
               Get fashion advice made for your body, your skin tone, and your
             </p>
-            <p className="text-sm sm:text-base md:text-sm text-gray-600 max-w-2xl">
+            <p className="mx-auto text-sm sm:text-base md:text-sm text-gray-600 max-w-2xl">
               unique style. Get fashion advice made for your body.
             </p>
           </div>
 
           <div
             ref={containerRef}
-            className="flex gap-10 overflow-hidden max-w-6xl"
+            style={{
+              width: CARD_WIDTH * 3 + GAP * 2,
+            }}
+            className="flex gap-10 overflow-hidden mx-auto"
           >
             {slides.map((slide, i) => (
               <div
