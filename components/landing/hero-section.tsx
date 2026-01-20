@@ -4,6 +4,7 @@ import Image from "next/image";
 import { Button } from "@/components/ui/button";
 import type { Stat } from "@/lib/landing-data";
 import { ArrowUpRight, Star, Menu, X } from "lucide-react";
+import NavBar from "@/components/landing/nav-bar";
 import {
   OutfitCard1,
   OutfitCard2,
@@ -69,120 +70,7 @@ export function HeroSection({ onWaitlist }: HeroSectionProps) {
   "
       />
 
-      {/* nav bar */}
-      <div className="fixed top-2 sm:top-4 left-0 right-0 z-50 flex items-center justify-center px-2 sm:px-4">
-        <div
-          className="
-            flex items-center gap-2 sm:gap-4 md:gap-6
-            rounded-full
-            border border-black/5
-            bg-[#FFFFFF80]
-            px-3 sm:px-4 md:px-6 py-2
-            h-12 sm:h-14
-            w-full
-            max-w-6xl
-            shadow-[0_10px_30px_rgba(12,6,24,0.07)]
-            backdrop-blur-md
-          "
-        >
-          <Image
-            src="/zuri-logo.png"
-            alt="Zuri logo"
-            width={52}
-            height={103}
-            className="w-8 h-auto sm:w-10 md:w-12"
-          />
-
-          <div className="flex-1 hidden md:block" />
-          <nav className="hidden lg:flex items-center gap-3 xl:gap-5 text-xs xl:text-sm">
-            <button className="text-[10.8px] xl:text-sm font-outfit text-[#555555] tracking-wide hover:text-[#E25C7E] transition-colors">
-              CAREER
-            </button>
-            <button className="text-[10.8px] xl:text-sm font-outfit text-[#555555] tracking-wide hover:text-[#E25C7E] transition-colors">
-              CONTACT US
-            </button>
-            <button className="text-[10.8px] xl:text-sm font-outfit text-[#555555] tracking-wide hover:text-[#E25C7E] transition-colors">
-              ZURI MAGAZINE
-            </button>
-          </nav>
-
-          <div className="flex-1 hidden md:block" />
-          <div className="flex-1"></div>
-          {/* Mobile Menu Button */}
-          <button
-            onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
-            className="lg:hidden p-2 text-[#555555] hover:text-[#E25C7E] transition-colors"
-            aria-label="Toggle menu"
-          >
-            {mobileMenuOpen ? (
-              <X className="w-5 h-5" />
-            ) : (
-              <Menu className="w-5 h-5" />
-            )}
-          </button>
-
-          <button
-            className="
-    rounded-full
-    bg-gradient-to-r
-    from-[#F2D1DA]
-    to-[rgba(226,92,126,0.2)]
-    px-[20px]
-    py-[10px]
-    text-[12px]
-    leading-[100%]
-    tracking-[0]
-    font-outfit
-    font-normal
-    text-[#4E4D4D]
-    shadow-[0_4px_12px_0_rgba(226,92,126,0.2)]
-    hover:opacity-100
-    transition
-    whitespace-nowrap
-    hidden sm:block
-  "
-          >
-            Start Styling
-          </button>
-        </div>
-
-        {/* Mobile Menu Dropdown */}
-        {mobileMenuOpen && (
-          <div className="lg:hidden fixed top-16 left-2 right-2 z-50 bg-transparent rounded-2xl shadow-[0_10px_30px_rgba(12,6,24,0.07)] backdrop-blur-md">
-            <nav className="flex flex-col p-4 gap-3">
-              <button className="text-sm font-outfit text-[#555555] tracking-wide hover:text-[#E25C7E] transition-colors text-left py-2">
-                CAREER
-              </button>
-              <button className="text-sm font-outfit text-[#555555] tracking-wide hover:text-[#E25C7E] transition-colors text-left py-2">
-                CONTACT US
-              </button>
-              <button className="text-sm font-outfit text-[#555555] tracking-wide hover:text-[#E25C7E] transition-colors text-left py-2">
-                MEET THE TEAM
-              </button>
-              <button
-                className="
-                  rounded-full
-                  bg-gradient-to-r
-                  from-[#F2D1DA]
-                  to-[rgba(226,92,126,0.2)]
-                  px-[20px]
-                  py-[10px]
-                  text-[12px]
-                  font-outfit
-                  font-normal
-                  text-[#4E4D4D]
-                  shadow-[0_4px_12px_0_rgba(226,92,126,0.2)]
-                  hover:opacity-100
-                  transition
-                  mt-2
-                "
-              >
-                Start Styling
-              </button>
-            </nav>
-          </div>
-        )}
-      </div>
+      <NavBar />
       <section className="relative min-h-[400px] sm:min-h-[600px] md:min-h-[700px] flex flex-col pt-20 sm:pt-24 md:pt-32 px-4 pb-4 sm:pb-4 md:pb-8">
         {/* Text content */}
         <div className="relative z-10 max-w-3xl mx-auto text-center px-4">
