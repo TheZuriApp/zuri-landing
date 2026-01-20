@@ -159,8 +159,8 @@ const originalSlides: Slide[] = [
   { image: "/images/outfitls/p1.png", title: "Wedding Chic" },
   { image: "/images/outfitls/p2.png", title: "Date Night Chic" },
   { image: "/images/outfitls/p3.png", title: "Brunch Chic" },
-  // { image: "/images/outfitls/o2.png", title: "Date Night Chic" },
-  // { image: "/images/outfitls/o3.png", title: "Brunch Chic" },
+  { image: "/images/outfitls/o2.png", title: "Date Night Chic" },
+  { image: "/images/outfitls/o3.png", title: "Brunch Chic" },
 ];
 
 // clone first + last for infinite effect
@@ -177,6 +177,7 @@ export default function InfiniteOutfitCarousel() {
   const [activeIndex, setActiveIndex] = useState(1);
   const [text, setText] = useState("");
   const [isDeleting, setIsDeleting] = useState(false);
+  
 
   /* ------------------ AUTO SLIDE ------------------ */
   useEffect(() => {
@@ -262,8 +263,6 @@ export default function InfiniteOutfitCarousel() {
 
     return () => clearTimeout(timer);
   }, [text, isDeleting, activeIndex]);
-  const CARD_WIDTH = 360; // sm:w-[360px]
-  const GAP = 40; // gap-10 → 40px
 
   return (
     <div className="min-h-screen bg-white flex items-center justify-center px-6">
@@ -273,20 +272,17 @@ export default function InfiniteOutfitCarousel() {
             <h1 className="text-xl sm:text-2xl md:text-[28px] lg:text-[32px] font-bold text-gray-900 mb-3 sm:mb-4">
               We Make Fashion <span className="text-[#E25C7E]">Feel Easy</span>
             </h1>
-            <p className="text-sm mx-auto sm:text-base md:text-sm text-gray-600 max-w-2xl ">
+            <p className="text-sm sm:text-base md:text-sm text-gray-600 max-w-2xl ">
               Get fashion advice made for your body, your skin tone, and your
             </p>
-            <p className="mx-auto text-sm sm:text-base md:text-sm text-gray-600 max-w-2xl">
+            <p className="text-sm sm:text-base md:text-sm text-gray-600 max-w-2xl">
               unique style. Get fashion advice made for your body.
             </p>
           </div>
 
           <div
             ref={containerRef}
-            style={{
-              width: CARD_WIDTH * 3 + GAP * 2,
-            }}
-            className="flex gap-10 overflow-hidden mx-auto"
+            className="flex gap-10 overflow-hidden max-w-6xl"
           >
             {slides.map((slide, i) => (
               <div

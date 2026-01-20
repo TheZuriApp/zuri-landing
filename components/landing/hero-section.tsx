@@ -22,7 +22,7 @@ export function HeroSection({ onWaitlist }: HeroSectionProps) {
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
 
   return (
-    <header className="relative min-h-screen flex flex-col gap-4 pt-2 overflow-hidden">
+    <header className="relative min-h-[90vh] sm:min-h-screen flex flex-col gap-4 pt-2 overflow-hidden">
       {/* Background gradient and pattern */}
       <div className="absolute inset-0 -z-10" />
       {/* /* Subtle dot pattern overlay */}
@@ -60,7 +60,8 @@ export function HeroSection({ onWaitlist }: HeroSectionProps) {
         alt="Dot pattern"
         className="
     absolute
-    top-[73%]
+    top-[60%]
+    sm:top-[73%]
     left-1/2
     -translate-x-1/2
     -translate-y-1/2
@@ -106,7 +107,7 @@ export function HeroSection({ onWaitlist }: HeroSectionProps) {
           </nav>
 
           <div className="flex-1 hidden md:block" />
-
+          <div className="flex-1"></div>
           {/* Mobile Menu Button */}
           <button
             onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
@@ -147,7 +148,7 @@ export function HeroSection({ onWaitlist }: HeroSectionProps) {
 
         {/* Mobile Menu Dropdown */}
         {mobileMenuOpen && (
-          <div className="lg:hidden fixed top-16 left-2 right-2 z-50 bg-white rounded-2xl border border-black/5 shadow-[0_10px_30px_rgba(12,6,24,0.07)] backdrop-blur-md mt-2">
+          <div className="lg:hidden fixed top-16 left-2 right-2 z-50 bg-transparent rounded-2xl shadow-[0_10px_30px_rgba(12,6,24,0.07)] backdrop-blur-md">
             <nav className="flex flex-col p-4 gap-3">
               <button className="text-sm font-outfit text-[#555555] tracking-wide hover:text-[#E25C7E] transition-colors text-left py-2">
                 CAREER
@@ -156,7 +157,7 @@ export function HeroSection({ onWaitlist }: HeroSectionProps) {
                 CONTACT US
               </button>
               <button className="text-sm font-outfit text-[#555555] tracking-wide hover:text-[#E25C7E] transition-colors text-left py-2">
-                Meet the Team
+                MEET THE TEAM
               </button>
               <button
                 className="
@@ -290,19 +291,6 @@ export function HeroSection({ onWaitlist }: HeroSectionProps) {
             />
 
             {/* RIGHT SIDE FLOATING CARDS - Hidden on mobile, shown on larger screens */}
-
-            {/* <Image
-              src="/Frame 1707492175.png"
-              alt="card"
-              width={150}
-              height={150}
-              className="
-        hidden lg:block absolute
-        right-[0%]
-        top-20
-        w-auto h-auto
-      "
-            /> */}
 
             <AskZuriCard />
 

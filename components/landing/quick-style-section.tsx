@@ -216,7 +216,7 @@ export default function QuickStyleSection() {
               <img
                 src="/images/quickStyle/k2.png"
                 alt="Phone Screen Content"
-                className="absolute w-[75%] h-[82%] object-fill z-10 justify-center mx-auto pl-2"
+                className="absolute w-[83%] h-[91%] object-fill z-10 justify-center mx-auto pl-2 sm:w-[75%] sm:h-[82%]"
               />
             </div>
           </div>
