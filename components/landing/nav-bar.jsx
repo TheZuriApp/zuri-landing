@@ -7,7 +7,7 @@ import Link from 'next/link';
 const Navbar = ({
     logoSrc = "/zuri.png",
     links = [
-        { label: "CAREER", href: "#" },
+        { label: "CAREER", href: "/coming-soon" },
         { label: "CONTACT US", href: "/contact-us" },
         // { label: "ZURI MAGAZINE", href: "#" },
     ],

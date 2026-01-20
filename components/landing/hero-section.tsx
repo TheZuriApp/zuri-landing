@@ -67,6 +67,7 @@ export function HeroSection({ onWaitlist }: HeroSectionProps) {
     -translate-x-1/2
     -translate-y-1/2
     z-0
+    opacity-30
   "
       />
 
@@ -87,8 +88,8 @@ export function HeroSection({ onWaitlist }: HeroSectionProps) {
     mx-auto
     mt-4
     max-w-md
-    text-[12px]
-    leading-[30px]
+    text-[14px]
+    leading-[12px]
     font-geist
     font-light
     text-center
@@ -97,8 +98,7 @@ export function HeroSection({ onWaitlist }: HeroSectionProps) {
     px-2
   "
           >
-            {/* Get fashion advice made simple, personal, and perfectly you. */}
-            Look Styled. Feel Confident. Every day.
+            Get fashion advice made for your body, your skin tone, and your unique style.
           </p>
 
           <div className="mt-6 sm:mt-8 flex flex-col sm:flex-row justify-center gap-3 sm:gap-4 md:gap-5">

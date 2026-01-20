@@ -22,6 +22,9 @@ export function CtaSection() {
             <h1 className="sm:text-[40px] text-[28px] font-bold text-[#333333] font-feilds">
               Get started for free
             </h1>
+            <span className="font-medium font-geist sm:text-[14px] text-[10px] text-[#828282]">
+              Get fashion advice made for your body, your skin tone, 
+            </span>
           </div>
           {/* play store app store logo */}
           <div className="mt-6 sm:mt-8 flex flex-col sm:flex-row justify-center gap-3 sm:gap-4 md:gap-5">
@@ -38,10 +41,10 @@ export function CtaSection() {
                   className="w-[30px] h-[37.5px] sm:w-7 sm:h-7"
                 ></Image>
                 <div className="flex flex-col">
-                  <span className="text-left text-[4px] sm:text-xs text-[#333333]">
+                  <span className="text-left text-[8px] sm:text-xs text-[#333333]">
                     Get it on
                   </span>
-                  <div className="text-left text-[8px] sm:text-xs font-semibold text-[#000000]">
+                  <div className="text-left text-[10px] sm:text-xs font-semibold text-[#000000]">
                     Google Play
                   </div>
                 </div>
@@ -60,10 +63,10 @@ export function CtaSection() {
                   className="w-[30px] h-[37.5px] sm:w-7 sm:h-7"
                 ></Image>
                 <div className="flex flex-col">
-                  <span className="text-left text-[4px] sm:text-xs text-[#333333]">
+                  <span className="text-left text-[8px] sm:text-xs text-[#333333]">
                     Download on
                   </span>
-                  <div className="text-left text-[8px] sm:text-xs font-semibold text-[#000000]">
+                  <div className="text-left text-[10px] sm:text-xs font-semibold text-[#000000]">
                     App Store
                   </div>
                 </div>

@@ -68,11 +68,11 @@ export default function ContactUs({ onWaitlist }: ContactUsProps) {
           </h1>
         </div>
       </section>
-      <div className="min-h-screen bg-white py-12 px-4 sm:px-6 lg:px-8">
+      <div className="min-h-screen bg-white py-6 px-4 sm:px-6 lg:px-8">
         <div className="max-w-6xl mx-auto">
           <div className="grid md:grid-cols-2 gap-8 lg:gap-12">
             {/* Left Side - Contact Information */}
-            <div className="space-y-8 pt-16 m-12">
+            <div className="space-y-8 pt-16 m-4">
               {/* Contact Number Card */}
               <div className="relative bg-white rounded-3xl shadow-md p-8 text-center overflow-hidden">
                 {/* Top Pink Strip */}
@@ -201,7 +201,7 @@ export default function ContactUs({ onWaitlist }: ContactUsProps) {
                     value={formData.message}
                     onChange={handleChange}
                     placeholder="Write a message....."
-                    rows={10}
+                    rows={8}
                     className="    w-full px-4 py-3 bg-[#F7F7F7] rounded-lg 
     focus:outline-none focus:ring-1 focus:ring-[#920146] focus:border-transparent 
     transition-all 
