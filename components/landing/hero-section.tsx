@@ -23,7 +23,7 @@ export function HeroSection({ onWaitlist }: HeroSectionProps) {
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
 
   return (
-    <header className="relative min-h-[90vh] sm:min-h-screen flex flex-col gap-4 pt-2 overflow-hidden">
+    <header className="relative sm:min-h-screen min-h-[70vh] flex flex-col gap-4 pt-2 overflow-hidden">
       {/* Background gradient and pattern */}
       <div className="absolute inset-0 -z-10" />
       {/* /* Subtle dot pattern overlay */}
@@ -61,7 +61,7 @@ export function HeroSection({ onWaitlist }: HeroSectionProps) {
         alt="Dot pattern"
         className="
     absolute
-    top-[60%]
+    top-[75%]
     sm:top-[73%]
     left-1/2
     -translate-x-1/2
@@ -75,11 +75,11 @@ export function HeroSection({ onWaitlist }: HeroSectionProps) {
         {/* Text content */}
         <div className="relative z-10 max-w-3xl mx-auto text-center px-4">
           <h1 className="font-fields font-semibold text-3xl sm:text-4xl md:text-[48px] leading-tight sm:leading-none tracking-normal text-center text-[#2B2B2B]">
-            Your AI Personal Stylist
+            Your Personal Stylist
           </h1>
 
-          <h1 className="mt-2 text-3xl sm:text-4xl md:text-5xl font-semibold leading-tight text-[#D96A7B]">
-            that truly gets you
+          <h1 className="mt-2 text-3xl sm:text-4xl md:text-5xl font-semibold leading-tight text-[#920146]">
+            Powered by AI
           </h1>
 
           <p

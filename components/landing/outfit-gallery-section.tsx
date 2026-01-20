@@ -48,7 +48,7 @@
 //           {/* have to adjust the positioning of this text later */}
 //           <div className="mb-4 sm:mb-6 md:mb-8">
 //             <h1 className="text-xl sm:text-2xl md:text-[28px] lg:text-[32px] font-bold text-gray-900 mb-3 sm:mb-4 px-2 sm:px-0">
-//               We Make Fashion <span className="text-[#E25C7E]">Feel Easy</span>
+//               We Make Fashion <span className="text-[#920146]">Feel Easy</span>
 //             </h1>
 //             <p className="text-sm sm:text-base md:text-sm text-gray-600 max-w-2xl px-2 sm:px-0">
 //               Get fashion advice made for your body, your skin tone, and your
@@ -159,8 +159,8 @@ const originalSlides: Slide[] = [
   { image: "/images/outfitls/p1.png", title: "Wedding Chic" },
   { image: "/images/outfitls/p2.png", title: "Date Night Chic" },
   { image: "/images/outfitls/p3.png", title: "Brunch Chic" },
-  { image: "/images/outfitls/o2.png", title: "Date Night Chic" },
-  { image: "/images/outfitls/o3.png", title: "Brunch Chic" },
+  { image: "/images/outfitls/p4.png", title: "Office Chic" },
+  { image: "/images/outfitls/p5.png", title: "Vacation Chic" },
 ];
 
 // clone first + last for infinite effect
@@ -177,7 +177,6 @@ export default function InfiniteOutfitCarousel() {
   const [activeIndex, setActiveIndex] = useState(1);
   const [text, setText] = useState("");
   const [isDeleting, setIsDeleting] = useState(false);
-  
 
   /* ------------------ AUTO SLIDE ------------------ */
   useEffect(() => {
@@ -265,24 +264,24 @@ export default function InfiniteOutfitCarousel() {
   }, [text, isDeleting, activeIndex]);
 
   return (
-    <div className="min-h-screen bg-white flex items-center justify-center px-6">
+    <div className="sm:min-h-screen bg-white flex items-center justify-center px-6 min-h-[50vh]" >
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-4 sm:py-2 md:py-4">
         <div className="flex flex-col bg-gray-50 rounded-2xl sm:rounded-3xl p-4 sm:p-6 md:p-8 mb-6 sm:mb-8">
           <div className="mb-4 sm:mb-6 md:mb-8 justify-center text-center">
             <h1 className="text-xl sm:text-2xl md:text-[28px] lg:text-[32px] font-bold text-gray-900 mb-3 sm:mb-4">
-              We Make Fashion <span className="text-[#E25C7E]">Feel Easy</span>
+              We Make Fashion <span className="text-[#920146]">Feel Easy</span>
             </h1>
-            <p className="text-sm sm:text-base md:text-sm text-gray-600 max-w-2xl ">
+            <p className="mx-auto text-sm sm:text-base md:text-sm text-gray-600 max-w-2xl ">
               Get fashion advice made for your body, your skin tone, and your
             </p>
-            <p className="text-sm sm:text-base md:text-sm text-gray-600 max-w-2xl">
+            <p className="mx-auto text-sm sm:text-base md:text-sm text-gray-600 max-w-2xl">
               unique style. Get fashion advice made for your body.
             </p>
           </div>
 
           <div
             ref={containerRef}
-            className="flex gap-10 overflow-hidden max-w-6xl"
+            className="flex  gap-4 sm:gap-15 overflow-hidden max-w-6xl"
           >
             {slides.map((slide, i) => (
               <div
@@ -290,7 +289,7 @@ export default function InfiniteOutfitCarousel() {
                 ref={(el) => {
                   cardRefs.current[i] = el;
                 }}
-                className={`relative shrink-0 w-[320px] sm:w-[360px] h-[520px]
+                className={`relative shrink-0 w-[180px] sm:w-[360px] sm:h-[520px] h-[240px]
               rounded-[28px] overflow-hidden transition-all duration-500
               ${
                 i === activeIndex

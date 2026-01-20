@@ -148,7 +148,7 @@ export default function ContactUs({ onWaitlist }: ContactUsProps) {
                     placeholder="Type your name"
                     className="
     w-full px-4 py-3 bg-[#F7F7F7] rounded-lg 
-    focus:outline-none focus:ring-1 focus:ring-[#E25C7E] focus:border-transparent 
+    focus:outline-none focus:ring-1 focus:ring-[#920146] focus:border-transparent 
     transition-all 
     font-geist text-[16px] font-extralight leading-[14px]
     placeholder:font-geist 
@@ -176,7 +176,7 @@ export default function ContactUs({ onWaitlist }: ContactUsProps) {
                     onChange={handleChange}
                     placeholder="Type your email id"
                     className="    w-full px-4 py-3 bg-[#F7F7F7] rounded-lg 
-    focus:outline-none focus:ring-1 focus:ring-[#E25C7E] focus:border-transparent 
+    focus:outline-none focus:ring-1 focus:ring-[#920146] focus:border-transparent 
     transition-all 
     font-geist text-[16px] font-extralight leading-[14px]
     placeholder:font-geist 
@@ -203,7 +203,7 @@ export default function ContactUs({ onWaitlist }: ContactUsProps) {
                     placeholder="Write a message....."
                     rows={10}
                     className="    w-full px-4 py-3 bg-[#F7F7F7] rounded-lg 
-    focus:outline-none focus:ring-1 focus:ring-[#E25C7E] focus:border-transparent 
+    focus:outline-none focus:ring-1 focus:ring-[#920146] focus:border-transparent 
     transition-all 
     font-geist text-[16px] font-extralight leading-3.5
     placeholder:font-geist 
@@ -217,7 +217,7 @@ export default function ContactUs({ onWaitlist }: ContactUsProps) {
                 {/* Submit Button */}
                 <button
                   onClick={handleSubmit}
-                  className="w-full sm:w-auto px-8 py-3 bg-gradient-to-r from-[#E25C7E33] to-[#F2D1DA] text-[#4E4D4Ds] text-[14px] font-outfit font-normal rounded-full transform hover:scale-105 transition-all duration-200 hover:shadow-lg"
+                  className="w-full sm:w-auto px-8 py-3 bg-gradient-to-r from-[#92014633] to-[#F2D1DA] text-[#4E4D4Ds] text-[14px] font-outfit font-normal rounded-full transform hover:scale-105 transition-all duration-200 hover:shadow-lg"
                 >
                   Send message
                 </button>

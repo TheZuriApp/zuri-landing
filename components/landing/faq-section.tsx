@@ -45,7 +45,7 @@ export default function FAQAccordion() {
         {/* Header */}
         <div className="text-center mb-6 sm:mb-8 ">
           <h1 className="text-xl sm:text-2xl md:text-3xl lg:text-[32px] font-bold text-gray-800 mb-3 sm:mb-4 ">
-            Frequently Asked <span className="text-[#E25C7E]">Questions</span>
+            Frequently Asked <span className="text-[#920146]">Questions</span>
           </h1>
           <p className="text-gray-600 text-sm sm:text-base md:text-base px-2">
             Get fashion advice made for your body, your skin tone, and your
@@ -72,7 +72,7 @@ export default function FAQAccordion() {
                     openIndex === index ? "rotate-45" : ""
                   }`}
                 >
-                  <PlusCircle className="w-4 h-4 sm:w-5 sm:h-5 text-[#E25C7E]" />
+                  <PlusCircle className="w-4 h-4 sm:w-5 sm:h-5 text-[#920146]" />
                 </div>
               </button>
               <div className="border-b border-[#E6CED4]" /> {/* Thin pink line */}

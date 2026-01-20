@@ -5,11 +5,11 @@ import { Menu, X } from 'lucide-react';
 import Link from 'next/link';
 
 const Navbar = ({
-    logoSrc = "/zuri-logo.png",
+    logoSrc = "/zuri.png",
     links = [
         { label: "CAREER", href: "#" },
         { label: "CONTACT US", href: "/contact-us" },
-        { label: "ZURI MAGAZINE", href: "#" },
+        // { label: "ZURI MAGAZINE", href: "#" },
     ],
     ctaText = "Start Styling",
 }) => {
@@ -34,7 +34,7 @@ const Navbar = ({
                         alt="Logo"
                         width={52}
                         height={103}
-                        className="w-8 h-auto sm:w-10 md:w-12"
+                        className="w-8 h-auto sm:w-10 md:w-12 rounded-full"
                     />
                 </div>
 
@@ -45,7 +45,7 @@ const Navbar = ({
                         // 1. Capitalized Link
                         // 2. Key moved to the outermost element
                         <Link href={link.href} key={link.label}>
-                            <button className="text-[10.8px] xl:text-sm font-outfit text-[#555555] tracking-wide hover:text-[#E25C7E] transition-colors">
+                            <button className="text-[10.8px] xl:text-sm font-outfit text-[#555555] tracking-wide hover:text-[#920146] transition-colors">
                                 {link.label}
                             </button>
                         </Link>
@@ -68,7 +68,7 @@ const Navbar = ({
 
                     <button
                         onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
-                        className="lg:hidden p-2 text-[#555555] hover:text-[#E25C7E] transition-colors"
+                        className="lg:hidden p-2 text-[#555555] hover:text-[#920146] transition-colors"
                         aria-label="Toggle menu"
                     >
                         {mobileMenuOpen ? <X className="w-5 h-5" /> : <Menu className="w-5 h-5" />}
@@ -83,7 +83,7 @@ const Navbar = ({
                         {links.map((link) => (
                             <button
                                 key={link.label}
-                                className="text-sm font-outfit text-[#555555] tracking-wide hover:text-[#E25C7E] transition-colors text-left py-3 border-b border-black/5 last:border-0"
+                                className="text-sm font-outfit text-[#555555] tracking-wide hover:text-[#920146] transition-colors text-left py-3 border-b border-black/5 last:border-0"
                             >
                                 {link.label}
                             </button>
