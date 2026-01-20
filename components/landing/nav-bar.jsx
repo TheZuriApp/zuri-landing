@@ -2,12 +2,13 @@
 import React, { useState } from 'react';
 import Image from 'next/image';
 import { Menu, X } from 'lucide-react';
+import Link from 'next/link';
 
 const Navbar = ({
     logoSrc = "/zuri-logo.png",
     links = [
         { label: "CAREER", href: "#" },
-        { label: "CONTACT US", href: "#" },
+        { label: "CONTACT US", href: "/contact-us" },
         { label: "ZURI MAGAZINE", href: "#" },
     ],
     ctaText = "Start Styling",
@@ -41,12 +42,13 @@ const Navbar = ({
                 <div className="flex-1 hidden lg:block" />
                 <nav className="hidden lg:flex items-center gap-3 xl:gap-5">
                     {links.map((link) => (
-                        <button
-                            key={link.label}
-                            className="text-[10.8px] xl:text-sm font-outfit text-[#555555] tracking-wide hover:text-[#E25C7E] transition-colors"
-                        >
-                            {link.label}
-                        </button>
+                        // 1. Capitalized Link
+                        // 2. Key moved to the outermost element
+                        <Link href={link.href} key={link.label}>
+                            <button className="text-[10.8px] xl:text-sm font-outfit text-[#555555] tracking-wide hover:text-[#E25C7E] transition-colors">
+                                {link.label}
+                            </button>
+                        </Link>
                     ))}
                 </nav>
                 <div className="flex-1 hidden lg:block" />
