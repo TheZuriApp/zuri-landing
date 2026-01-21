@@ -28,13 +28,13 @@ const Navbar = ({
         "
             >
                 {/* Logo */}
-                <div className="flex-shrink-0">
+                <div className="shrink-0">
                     <Image
                         src={logoSrc}
                         alt="Logo"
-                        width={52}
+                        width={102}
                         height={103}
-                        className="w-8 h-auto sm:w-10 md:w-12 rounded-full"
+                        className="w-8 h-auto sm:w-10 md:w-14 rounded-full"
                     />
                 </div>
 

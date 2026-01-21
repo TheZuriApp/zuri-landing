@@ -23,7 +23,7 @@ export function HeroSection({ onWaitlist }: HeroSectionProps) {
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
 
   return (
-    <header className="relative sm:min-h-screen min-h-[70vh] flex flex-col gap-4 pt-2 overflow-hidden">
+    <header className="relative sm:min-h-screen min-h-[70vh] flex flex-col gap-4 pt-2 overflow-hidden pb-8">
       {/* Background gradient and pattern */}
       <div className="absolute inset-0 -z-10" />
       {/* /* Subtle dot pattern overlay */}
@@ -61,8 +61,8 @@ export function HeroSection({ onWaitlist }: HeroSectionProps) {
         alt="Dot pattern"
         className="
     absolute
-    top-[75%]
-    sm:top-[73%]
+    top-[73%]
+    sm:top-[70%]
     left-1/2
     -translate-x-1/2
     -translate-y-1/2
@@ -98,7 +98,8 @@ export function HeroSection({ onWaitlist }: HeroSectionProps) {
     px-2
   "
           >
-            Get fashion advice made for your body, your skin tone, and your unique style.
+            Get fashion advice made for your body, your skin tone, and your
+            unique style.
           </p>
 
           <div className="mt-6 sm:mt-8 flex flex-col sm:flex-row justify-center gap-3 sm:gap-4 md:gap-5">
@@ -156,41 +157,49 @@ export function HeroSection({ onWaitlist }: HeroSectionProps) {
             <div className="absolute left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2 z-30">
               <div className="rounded-[30px] sm:rounded-[35px] md:rounded-[40px] bg-[#E9E6E6] p-2 sm:p-2.5 md:p-3 h-[280px] w-[140px] sm:h-[350px] sm:w-[175px] md:h-[420px] md:w-[210px] lg:h-[500px] lg:w-[250px]">
                 <Image
-                  src="/Mask group.png"
+                  src="/images/hero/Mask group.png"
                   alt="Phone mockup"
                   width={245}
                   height={495}
-                  className="rounded-[24px] sm:rounded-[28px] md:rounded-[32px] w-full h-full object-cover"
+                  className="rounded-3xl sm:rounded-[28px] md:rounded-[32px] w-full h-full object-cover"
                 />
               </div>
             </div>
 
             {/* LEFT SIDE FLOATING CARDS - Hidden on mobile, shown on larger screens */}
 
-            <OutfitCard1 imageSrc="/d1.png" title="How do I look?" />
-            <OutfitCard2 imageSrc="/d2.png" title="How do I look?" />
+            <OutfitCard1
+              imageSrc="/images/hero/d1.png"
+              title="How do I look?"
+            />
+            <OutfitCard2
+              imageSrc="/images/hero/d2.png"
+              title="How do I look?"
+            />
             <QuoteCard />
-            <Image
-              src="/Group 1707491891.png"
-              alt="card"
-              width={160}
-              height={160}
-              className="hidden lg:block absolute left-[0%] w-auto h-auto top-20"
+            <img
+              src="/images/hero/v1.svg"
+              alt="card1"
+              className="hidden lg:block absolute left-[5%] w-[180px] h-[180px] top-20"
             />
 
             {/* RIGHT SIDE FLOATING CARDS - Hidden on mobile, shown on larger screens */}
 
             <AskZuriCard />
 
-            <Image
-              src="/Group 1707491950.png"
-              alt="card"
-              width={160}
-              height={160}
-              className="hidden lg:block absolute right-[0%] w-auto h-auto top-70"
+            <img
+              src="/images/hero/v2.svg"
+              alt="card2"
+              className="hidden lg:block absolute right-[5%] w-[180px] h-[180px] top-70"
             />
-            <OutfitCard3 imageSrc="/d4.png" title="Help me style this?" />
-            <OutfitCard4 imageSrc="/d3.png" title="How do I look?" />
+            <OutfitCard3
+              imageSrc="/images/hero/d4.png"
+              title="Help me style this?"
+            />
+            <OutfitCard4
+              imageSrc="/images/hero/d3.png"
+              title="How do I look?"
+            />
           </div>
         </div>
       </section>
