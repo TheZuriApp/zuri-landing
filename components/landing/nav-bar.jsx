@@ -29,6 +29,7 @@ const Navbar = ({
             >
                 {/* Logo */}
                 <div className="shrink-0">
+                    <Link href="/">
                     <Image
                         src={logoSrc}
                         alt="Logo"
@@ -36,6 +37,7 @@ const Navbar = ({
                         height={103}
                         className="w-8 h-auto sm:w-10 md:w-14 rounded-full"
                     />
+                    </Link>
                 </div>
 
                 {/* Desktop Navigation */}
@@ -81,15 +83,16 @@ const Navbar = ({
                 <div className="lg:hidden fixed top-16 left-2 right-2 z-50 bg-white/80 rounded-2xl shadow-[0_10px_30px_rgba(12,6,24,0.07)] backdrop-blur-xl border border-white/20">
                     <nav className="flex flex-col p-4 gap-1">
                         {links.map((link) => (
-                            <button
-                                key={link.label}
-                                className="text-sm font-outfit text-[#555555] tracking-wide hover:text-[#920146] transition-colors text-left py-3 border-b border-black/5 last:border-0"
-                            >
-                                {link.label}
-                            </button>
+                            <Link href={link.href} key={link.label}>
+                                <button
+                                    className="text-sm font-outfit text-[#555555] tracking-wide hover:text-[#920146] transition-colors text-left py-3 border-b border-black/5 last:border-0"
+                                >
+                                    {link.label}
+                                </button>
+                            </Link>
                         ))}
                         <button
-                            onClick={onCtaClick}
+                            onClick={null}
                             className="
                 mt-4 w-full rounded-full bg-gradient-to-r from-[#F2D1DA] to-[rgba(226,92,126,0.2)]
                 py-3 text-[12px] font-outfit text-[#4E4D4D] shadow-[0_4px_12px_0_rgba(226,92,126,0.2)]

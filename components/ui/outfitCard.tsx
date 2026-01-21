@@ -146,7 +146,7 @@ export function QuoteCard() {
 
 export function AskZuriCard() {
   return (
-    <div className="relative w-[150px] h-[120px] flex items-center justify-center -right-115 -top-60 lg:block sm:block">
+    <div className="relative w-[150px] h-[120px] flex items-center justify-center -right-115 -top-60 hidden lg:block">
       {/* Scale wrapper */}
       <div className="origin-top-left scale-[0.45]">
         {/* Outer card */}
